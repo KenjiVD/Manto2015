@@ -64,8 +64,7 @@ public final class MCURegistrarPais
         // Se obtienen los datos para procesar el registro
         FormaNuevoPais forma = (FormaNuevoPais)form;
 
-        Pais rol = new Pais(forma.getNombre(),
-                          forma.getDescripcion());
+        Pais rol = new Pais(forma.getDescripcion());
 
         ManejadorPaises mr = new ManejadorPaises();
         int resultado = mr.crearPais(rol);
@@ -77,8 +76,7 @@ public final class MCURegistrarPais
 
             case 1:
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
-                            new ActionMessage("errors.nombrePaisYaExiste",
-                                               forma.getNombre()));                
+                            new ActionMessage("errors.nombrePaisYaExiste"));                
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
 

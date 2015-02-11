@@ -155,6 +155,14 @@
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoEstado.jsp"/>
         </action>
+        <action path="/solicitarRegistroPais"
+                type="edu.uag.iidis.scec.control.MCURegistrarPais"
+                parameter="solicitarRegistroPais"
+                name="formaNuevoPais"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoPais.jsp"/>
+        </action>
         <action path="/solicitarListarCiudades"
                 type="edu.uag.iidis.scec.control.MCUListarCiudades"
                 parameter="solicitarListarCiudades"
@@ -212,6 +220,17 @@
             <forward name="cancelar" path="/solicitarListarEstados.do" redirect="true"/>
             <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
             <forward name="volver" path="solicitarRegistroEstado.do" redirect="true"/>
+       </action>
+       <action path="/procesarRegistroPais"
+                type="edu.uag.iidis.scec.control.MCURegistrarPais"
+                parameter="procesarRegistroPais"
+                name="formaNuevoPais"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoPais.jsp" >
+            <forward name="cancelar" path="/solicitarListarPaises.do" redirect="true"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
+            <forward name="volver" path="solicitarRegistroPais.do" redirect="true"/>
        </action>
        <action path="/procesarRegistroCiudad"
                 type="edu.uag.iidis.scec.control.MCURegistrarCiudad"

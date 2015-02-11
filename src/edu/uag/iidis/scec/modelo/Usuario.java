@@ -20,6 +20,7 @@ public class Usuario extends Persona {
     protected Credencial credencial;
     protected List roles = new ArrayList();
     protected List estados = new ArrayList();
+    protected List paises = new ArrayList();
 
     public Usuario(){
     }
@@ -92,6 +93,9 @@ public class Usuario extends Persona {
         return estados;
     }
 
+    public List getPaises() {
+        return paises;
+    }
 
     /**
      * Establece los estados del usuario
@@ -101,6 +105,9 @@ public class Usuario extends Persona {
         this.estados = estados;
     }
 
+    public void setPaises(List paises) {
+        this.paises = paises;
+    }
 
     /**
      * Agrega un estado para el usuario
@@ -113,9 +120,20 @@ public class Usuario extends Persona {
         }
     }
 
+    public void addPais(Pais pais) {
+        if (paises.indexOf(pais) < 0) {
+            paises.add(pais);
+            pais.getUsuarios().add(this);
+        }
+    }
     
     public void removeEstado(Estado estado) {
         estados.remove(estado);
         estado.getUsuarios().remove(this);
+    }
+
+    public void removePais(Pais pais) {
+        paises.remove(pais);
+        pais.getUsuarios().remove(this);
     }
 }
