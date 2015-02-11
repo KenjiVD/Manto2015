@@ -5,7 +5,7 @@
         <span><a href="solicitarListarRoles.do">Roles</a></span>
         <span><a href="solicitarListarEstados.do">Estados</a></span>
         <span><a href="solicitarListarCiudades.do">Ciudades</a></span>
-        <span><a href="solicitarListarGentes.do">Personas</a></span>
+        <span><a href="solicitarListarPersonas.do">Personas</a></span>
         <span><a href="solicitarListarPaises.do">ListarPaises</a></span>
         <span><a href="irAyuda.do">Ayuda</a></span>
     </section>
