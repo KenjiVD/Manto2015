@@ -1,7 +1,7 @@
 package edu.uag.iidis.scec.vista;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts.action.ActionError;
 import org.apache.struts.action.ActionErrors;
@@ -17,25 +17,13 @@ import org.apache.struts.validator.ValidatorForm;
 public final class FormaNuevaPersona
         extends ValidatorForm {
 
-    private String prefijo;
-    private String nombre;
-    private String apellidoPaterno;
-    private String apellidoMaterno;
-    private String posfijo;
-    private String iniciales;
-    private String nombreUsuario;
-    private String claveAcceso;
-    private String claveAccesoConfirmacion;
-	private Collection ciudades;
-	private int contador;
-
-    public void setPrefijo(String prefijo) {
-        this.prefijo=prefijo;
-    }
-
-    public String getPrefijo() {
-        return (this.prefijo);
-    }
+    private Collection ciudades;
+    private int contador;
+    private String nombres;
+    private String apellidos;
+    private String direccion;
+    private String telefono;
+    private Long idCiudad;
 
 
     public void setCiudades(Collection ciudades) {
@@ -50,92 +38,54 @@ public final class FormaNuevaPersona
         return (this.ciudades);
     }
 
-    public int getContador() {
-        return (this.contador);
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getNombre() {
-        return (this.nombre);
+    public String getNombres() {
+        return (this.nombres);
     }
 
 
-    public void setApellidoPaterno(String apellidoPaterno) {
-        this.apellidoPaterno = apellidoPaterno;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
-    public String getApellidoPaterno() {
-        return (this.apellidoPaterno);
+    public String getApellidos() {
+        return (this.apellidos);
     }
 
-
-    public void setApellidoMaterno(String apellidoMaterno) {
-        this.apellidoMaterno = apellidoMaterno;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getApellidoMaterno() {
-        return (this.apellidoMaterno);
+    public String getDireccion() {
+        return (this.direccion);
     }
 
-
-    public void setPostfijo(String posfijo) {
-        this.posfijo = posfijo;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public String getPosfijo() {
-        return (this.posfijo);
+    public String getTelefono() {
+        return (this.telefono);
     }
 
-
-    public void setIniciales(String iniciales) {
-        this.iniciales = iniciales;
+    public void setidCiudad(Long id) {
+        this.idCiudad = id;
     }
 
-    public String getIniciales() {
-        return (this.iniciales);
+    public Long getidCiudad() {
+        return (this.idCiudad);
     }
-
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
-
-    public String getNombreUsuario() {
-        return (this.nombreUsuario);
-    }
-
-
-    public void setClaveAcceso(String claveAcceso) {
-        this.claveAcceso=claveAcceso;
-    }
-
-    public String getClaveAcceso() {
-        return (this.claveAcceso);
-    }
-
-
-    public void setClaveAccesoConfirmacion(String claveAccesoConfirmacion) {
-        this.claveAccesoConfirmacion=claveAccesoConfirmacion;
-    }
-
-    public String getClaveAccesoConfirmacion() {
-        return (this.claveAccesoConfirmacion);
-    }
-
 
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {
-	prefijo=null;
-        nombre=null;
-        apellidoPaterno=null;
-        apellidoMaterno=null;
-        posfijo=null;
-        iniciales=null;
-        nombreUsuario=null;
-        claveAcceso=null;
-        claveAccesoConfirmacion=null;
+        nombres=null;
+        apellidos=null;
+        idCiudad=null;
+        direccion=null;
+        telefono=null;
     }
 
 

@@ -1,12 +1,12 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
-    <%@ taglib uri="/tags/struts-html" prefix="html" %>
+    <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
 
 
     <br>
     <font size='5'><fmt:message key="formaNuevaPersona.titulo" /></font>
 
-    <form id="forma" action="procesarRegistro.do" method="post">
+    <form id="forma" action="procesarRegistroPersona.do" method="post">
         <div class="table">
             <div class="tr">
                 <div class="td" colspan="2">
@@ -15,125 +15,103 @@
             </div>
             <div class="tr">
                 <div class="td" align="right">
-                    <fmt:message key="formaNuevaPersona.etiqueta.prefijo" />
+                    <fmt:message key="formaNuevaPersona.etiqueta.nombres" />
                 </div>
                 <div class="td" align="left">
                     <input type="text" 
-                           name="prefijo" 
-                           size="12" 
-                           maxlength="12" 
-                           value="${formaNuevaPersona.prefijo}" />
-                </div>
-            </div>
-            <div class="tr">
-                <div class="td" align="right">
-                    <fmt:message key="formaNuevaPersona.etiqueta.nombre" />
-                </div>
-                <div class="td" align="left">
-                    <input type="text" 
-                           name="nombre" 
+                           name="nombres" 
                            size="50" 
                            maxlength="100" 
-                           value="${formaNuevaPersona.nombre}" />
+                           value="${formaNuevaPersona.nombres}" />
                 </div>
             </div>
             <div class="tr">
                 <div class="td" align="right">
-                    <fmt:message key="formaNuevaPersona.etiqueta.apellidoPaterno" />
+                    <fmt:message key="formaNuevaPersona.etiqueta.apellidos" />
                 </div>
                 <div class="td" align="left">
                     <input type="text" 
-                           name="apellidoPaterno" 
+                           name="apellidos" 
                            size="50" 
                            maxlength="100" 
-                           value="${formaNuevaPersona.apellidoPaterno}" />
+                           value="${formaNuevaPersona.apellidos}" />
                 </div>
             </div>
             <div class="tr">
                 <div class="td" align="right">
-                    <fmt:message key="formaNuevaPersona.etiqueta.apellidoMaterno" />
+                    <fmt:message key="formaNuevaPersona.etiqueta.direccion" />
                 </div>
                 <div class="td" align="left">
                     <input type="text" 
-                           name="apellidoMaterno" 
+                           name="direccion" 
                            size="50" 
                            maxlength="100" 
-                           value="${formaNuevaPersona.apellidoMaterno}" />
+                           value="${formaNuevaPersona.direccion}" />
                 </div>
             </div>
-      <!---    /cidades --->      
             <div class="tr">
                 <div class="td" align="right">
-                    <fmt:message key="formaNuevaPersona.etiqueta.ciudades" />
-                </div>
-                <div class="td" align="left">
-       				<select name="ciudad">
-                        <c:forEach var="rol" items="${formaNuevaPersona.ciudades}">
-    		            <option value="${rol.nombre}">"${rol.descripcion}"</option>
-            			</c:forEach>
-                     </select>
-                </div>
-            </div>
-            
-            
-            
-            
-            <div class="tr">
-                <div class="td" align="right">
-                    <fmt:message key="formaNuevaPersona.etiqueta.nombreUsuario" />
+                    <fmt:message key="formaNuevaPersona.etiqueta.telefono" />
                 </div>
                 <div class="td" align="left">
                     <input type="text" 
-                           name="nombreUsuario" 
+                           name="telefono" 
                            size="50" 
                            maxlength="100" 
-                           value="${formaNuevaPersona.nombreUsuario}" />
+                           value="${formaNuevaPersona.telefono}" />
                 </div>
             </div>
             <div class="tr">
                 <div class="td" align="right">
-                    <fmt:message key="formaNuevaPersona.etiqueta.claveAcceso" />
+                    <fmt:message key="formaNuevaPersona.etiqueta.ciudad" />
                 </div>
-                <div class="td" align="left">
+                <div class="td" align="left" style="position:relative">
                     <input type="text" 
-                           name="claveAcceso" 
+                           id ="ciudadBuscar" autocomplete="off" />
+                    <div class="buscar">
+                      <ul>
+                      </ul>
+                    </div>
+                    <input type="text" 
+                           id="idCiudad"
+                           name="idCiudad" 
                            size="50" 
-                           maxlength="100" 
-                           value="${formaNuevaPersona.claveAcceso}" />
+                           style="display:none"
+                           maxlength="100" />
+                  <!--
+                    <select name="idCiudad" >
+                      <c:forEach var="ciudad" items="${formaNuevaPersona.ciudades}">
+                        <option value='<c:out value="${ciudad.id}" />'><c:out value="${ciudad.nombre}" /></option>
+                      </c:forEach>
+                    </select>
+                  -->
                 </div>
             </div>
             <div class="tr">
                 <div class="td" align="right">
-                    <fmt:message key="formaNuevaPersona.etiqueta.claveAccesoConfirmacion" />
+                    <fmt:message key="formaNuevaPersona.etiqueta.estado" />
                 </div>
-                <div class="td" align="left">
-                    <input type="text" 
-                           name="claveAccesoConfirmacion" 
-                           size="50" 
-                           maxlength="100" 
-                           value="${formaNuevaPersona.claveAccesoConfirmacion}" />
+                <div class="td" align="left" style="position:relative">
+                    <div id="estadoNombre"></div>
                 </div>
             </div>
             <div class="tr">
-                <div class="td" colspan="2" align="center">
+                <div class="td" style="width:400px;" align="center">
                     <input type="submit" 
                            name="submit"
                            value="Agregar y terminar"/>
                     <input type="submit" 
                            name="submit"
                            value="Agregar y volver"
-                           onclick="forma.action='procesarRegistro.do?volver=si'"/>
+                           onclick="forma.action='procesarRegistroPersona.do?volver=si'"/>
                     <input type="button"
                            value="Reset"
-                           onclick="location.href='solicitarRegistro.do'" />
+                           onclick="location.href='solicitarRegistroPersona.do'" />
                     <input type="submit" 
                            name="org.apache.struts.taglib.html.CANCEL" 
-                           value="Cancelar" 
+                           value="cancelar" 
                            onclick="bCancel=true;">    
                 </div>
             </div>
         </div>
     </form>
-
-
-

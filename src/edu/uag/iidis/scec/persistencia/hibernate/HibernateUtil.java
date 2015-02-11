@@ -147,7 +147,7 @@ public class HibernateUtil {
 
     /**
      * Recupera la sesión actual local al thread.
-     * <p/>
+     * 
      * Si la sesión no está abierta, abre una nueva sesión 
      * para el thread que se ejecuta.
      *
