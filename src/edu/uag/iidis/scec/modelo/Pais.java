@@ -81,6 +81,6 @@ public class Pais extends ClaseBase
 
     public void addUsuario(Usuario usuario) {
         usuarios.add(usuario);
-        usuario.getEstados().add(this);
+        usuario.getPaises().add(this);
     }
 }
