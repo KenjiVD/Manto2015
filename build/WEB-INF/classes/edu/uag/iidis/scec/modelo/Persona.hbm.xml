@@ -31,8 +31,6 @@
         <property name="Telefono"
             type="java.lang.String" />
             
-        <property name="claveAcceso"
-            type="java.lang.String" />
     </class>
 
 </hibernate-mapping>

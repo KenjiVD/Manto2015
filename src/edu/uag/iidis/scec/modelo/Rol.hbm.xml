@@ -22,7 +22,7 @@
         <property name="descripcion"
             type="java.lang.String" />
 
-        <bag name="usuarios"
+        <!--<bag name="usuarios"
              lazy="false"
              table="UsuarioRol"
              inverse="true"
@@ -32,7 +32,7 @@
 
              <many-to-many column="idUsuario"
                   class="edu.uag.iidis.scec.modelo.Usuario" />
-        </bag>
+        </bag>-->
 
 
     </class>
