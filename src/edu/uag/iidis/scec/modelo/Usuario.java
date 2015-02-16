@@ -18,6 +18,7 @@ import java.util.List;
 public class Usuario extends Persona {
     
     protected Credencial credencial;
+    protected Persona persona;
     protected List roles = new ArrayList();
     protected List estados = new ArrayList();
     protected List paises = new ArrayList();
@@ -25,9 +26,9 @@ public class Usuario extends Persona {
     public Usuario(){
     }
 
-    public Usuario(NombrePersona nombre, 
+    public Usuario(Persona nombre, 
                    Credencial credencial) {
-        super(nombre);
+//        super(nombre);
         this.credencial=credencial;
     }
 
@@ -38,6 +39,10 @@ public class Usuario extends Persona {
      */
     public Credencial getCredencial() {
         return credencial;
+    }
+
+    public Persona getPersona(){
+        return this.persona;
     }
 
     /**

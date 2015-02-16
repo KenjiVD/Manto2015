@@ -80,7 +80,7 @@
                            maxlength="100" />
                   <!--
                     <select name="idCiudad" >
-                      <c:forEach var="ciudad" items="${formaNuevaPersona.ciudades}">
+                      <c:forEach var="ciudad" items="${formaNuevaPersona.getCiudades}">
                         <option value='<c:out value="${ciudad.id}" />'><c:out value="${ciudad.nombre}" /></option>
                       </c:forEach>
                     </select>

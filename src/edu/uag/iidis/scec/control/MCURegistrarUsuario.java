@@ -92,17 +92,21 @@ public final class MCURegistrarUsuario
         // Se obtienen los datos para procesar el registro
         FormaNuevaPersona forma = (FormaNuevaPersona)form;
 
-        NombrePersona nombrePersona = new NombrePersona(forma.getPrefijo(),
+        /*NombrePersona nombrePersona = new NombrePersona(forma.getPrefijo(),
                                                         forma.getNombre(),
                                                         forma.getApellidoPaterno(),
                                                         forma.getApellidoMaterno(),
                                                         forma.getPosfijo(),
-                                                        forma.getIniciales());
+                                                        forma.getIniciales());*/
 
-        Credencial credencial = new Credencial (forma.getNombreUsuario(),
-                                                forma.getClaveAcceso());
+        Persona per = new Persona(forma.getNombres(),
+                          forma.getApellidos(), forma.getDireccion(), forma.getTelefono(), forma.getidCiudad());
 
-        Usuario usuario = new Usuario(nombrePersona, credencial);
+
+        Credencial credencial = new Credencial (forma.getNombres(),
+                                                "forma.getClaveAcceso()");
+
+        Usuario usuario = new Usuario(per, credencial);
 
         ManejadorUsuarios mu = new ManejadorUsuarios();
         int resultado = mu.crearUsuario(usuario);
@@ -115,7 +119,7 @@ public final class MCURegistrarUsuario
             case 1:
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
                             new ActionMessage("errors.nombreUsuarioYaExiste",
-                                               forma.getNombreUsuario()));                
+                                               forma.getNombres()));                
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
 

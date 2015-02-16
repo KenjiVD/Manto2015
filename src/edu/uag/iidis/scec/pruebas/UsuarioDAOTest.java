@@ -31,11 +31,12 @@ public class UsuarioDAOTest extends TestCase {
     }
 
     public void testCrearUsuario() throws Exception {
+        Long x = Long.parseLong("12345");
         Usuario usuario = new Usuario(
-                    new NombrePersona("Ing.",
+                    new Persona("Ing.",
                                       "Gonzalo",
                                       "Osuna", "Millán", 
-                                      "", "gom"),
+                                      x),
                     new Credencial("gosuna","123"));
         try {
             HibernateUtil.beginTransaction();
@@ -43,12 +44,8 @@ public class UsuarioDAOTest extends TestCase {
             HibernateUtil.commitTransaction();
 
             assertTrue(usuario.getId() != null);
-            assertTrue(usuario.getNombre()
-                              .getApellidoPaterno()
-                              .equals("Osuna"));
-            assertTrue(usuario.getCredencial()
-                              .getNombreUsuario()
-                              .equals("gosuna"));
+            assertTrue(usuario.getPersona().getNombres().equals("Osuna"));
+            assertTrue(usuario.getCredencial().equals("gosuna"));
         } catch (Exception e) {
             HibernateUtil.rollbackTransaction();
             throw e;
@@ -58,11 +55,12 @@ public class UsuarioDAOTest extends TestCase {
     }
 
     public void testCrearUsuarioInvalido() throws Exception {
+        Long x = Long.parseLong("12345");
         Usuario usuario = new Usuario(
-                    new NombrePersona("Ing.",
+                    new Persona("Ing.",
                                       "Gonzalo",
                                       "Osuna", "Millán", 
-                                      "", "gom"),
+                                      x),
                     new Credencial("gosuna","123"));
 
         try {
@@ -82,10 +80,8 @@ public class UsuarioDAOTest extends TestCase {
         Usuario usuario;
         try {
             usuario = dao.buscarPorId(new Long(1), false);
-            assertTrue(usuario.getId() != null);
-            assertTrue(usuario.getNombre()
-                              .getApellidoPaterno()
-                              .equals("Osuna"));
+            assertTrue(usuario.getPersona().getId() != null);
+            assertTrue(usuario.getPersona().getNombres().equals("Osuna"));
         } catch (Exception e) {
             throw e;
         } finally{

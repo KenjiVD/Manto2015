@@ -45,24 +45,24 @@
                 <arg0 key="formaNuevoLogin.etiqueta.claveAcceso"/>
             </field>
         </form>
-        <form name="formaNuevoGente">
+        <form name="formaNuevaPersona">
             <field property="nombres" depends="required">
-                <arg0 key="formaNuevoGente.etiqueta.nombres"/>
+                <arg0 key="formaNuevaPersona.etiqueta.nombres"/>
             </field>
             <field property="apellidos" depends="required">
-                <arg0 key="formaNuevoGente.etiqueta.apellidos"/>
+                <arg0 key="formaNuevaPersona.etiqueta.apellidos"/>
             </field>
             <field property="direccion" depends="required">
-                <arg0 key="formaNuevoGente.etiqueta.direccion"/>
+                <arg0 key="formaNuevaPersona.etiqueta.direccion"/>
             </field>
             <field property="telefono" depends="required">
-                <arg0 key="formaNuevoGente.etiqueta.telefono"/>
+                <arg0 key="formaNuevaPersona.etiqueta.telefono"/>
             </field>
             <field property="idCiudad" depends="required">
-                <arg0 key="formaNuevoGente.etiqueta.ciudad"/>
+                <arg0 key="formaNuevaPersona.etiqueta.ciudad"/>
             </field>
         </form>
-        <form name="formaNuevaPersona">
+     <!--   <form name="formaNuevaPersona">
             <field property="nombre"
          	   depends="required,mask">
                 <msg name="mask" key="errors.mascaraa-zA-Z"/>
@@ -148,7 +148,7 @@
                     <var-value>(claveAcceso == *this*)</var-value>
                 </var>
             </field>
-        </form>
+        </form>-->
    </formset>
 
 </form-validation>

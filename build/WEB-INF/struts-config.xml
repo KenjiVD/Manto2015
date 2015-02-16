@@ -53,26 +53,11 @@
         <form-bean name="formaEliminarCiudad"
                    type="edu.uag.iidis.scec.vista.FormaEliminarCiudad">
         </form-bean>
-        <form-bean name="formaNuevoGente"
-                   type="edu.uag.iidis.scec.vista.FormaNuevoGente">
+        <form-bean name="formaNuevoPersona"
+                   type="edu.uag.iidis.scec.vista.FormaNuevoPersona">
         </form-bean>
-        <form-bean name="formaNuevoGenteCiudades"
-                   type="edu.uag.iidis.scec.vista.FormaNuevoGenteCiudades">
-        </form-bean>
-        <form-bean name="formaListadoGentes"
-                   type="edu.uag.iidis.scec.vista.FormaListadoGentes">
-        </form-bean>
-        <form-bean name="formaListadoGentesOrdenar"
-                   type="edu.uag.iidis.scec.vista.FormaListadoGentesOrdenar">
-        </form-bean>
-        <form-bean name="formaEliminarGente"
-                   type="edu.uag.iidis.scec.vista.FormaEliminarGente">
-        </form-bean>
-        <form-bean name="formaNuevaPersona"
-                   type="edu.uag.iidis.scec.vista.FormaNuevaPersona">
-        </form-bean>
-        <form-bean name="formaNuevaPersonaCiudades"
-                   type="edu.uag.iidis.scec.vista.FormaNuevaPersonaCiudades">
+        <form-bean name="formaNuevoPersonaCiudades"
+                   type="edu.uag.iidis.scec.vista.FormaNuevoPersonaCiudades">
         </form-bean>
         <form-bean name="formaListadoPersonas"
                    type="edu.uag.iidis.scec.vista.FormaListadoPersonas">
@@ -83,7 +68,6 @@
         <form-bean name="formaEliminarPersona"
                    type="edu.uag.iidis.scec.vista.FormaEliminarPersona">
         </form-bean>
-
         <form-bean name="formaNuevoLogin"
                    type="edu.uag.iidis.scec.vista.FormaNuevoLogin">
         </form-bean>
@@ -215,6 +199,17 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
             <forward name="volver" path="solicitarRegistro.do" redirect="true"/>
        </action>
+       <action path="/procesarRegistroPersona"
+                type="edu.uag.iidis.scec.control.MCURegistrarPersona"
+                parameter="procesarRegistro"
+                name="formaNuevaPersona"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp" >
+            <forward name="cancelar" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
+            <forward name="volver" path="solicitarRegistro.do" redirect="true"/>
+       </action>
        <action path="/procesarRegistroRol"
                 type="edu.uag.iidis.scec.control.MCURegistrarRol"
                 parameter="procesarRegistroRol"
@@ -261,61 +256,7 @@
        </action>
 
 
-       <action path="/solicitarListarGentes"
-                type="edu.uag.iidis.scec.control.MCUListarGentes"
-                parameter="solicitarListarGentes"
-                name="formaListadoGentes"
-                scope="request"
-                validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoGentes.jsp"/>
-            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
-        </action>
-        <action path="/procesarEliminarGente"
-                type="edu.uag.iidis.scec.control.MCUEliminarGente"
-                parameter="procesarEliminarGente"
-                name="formaEliminarGente"
-                scope="request"
-                validate="false">
-            <forward name="exito" path="/solicitarListarGentes.do" redirect="true"/>
-        </action>
-        <action path="/solicitarRegistroGente"
-                type="edu.uag.iidis.scec.control.MCURegistrarGente"
-                parameter="solicitarRegistroGente"
-                name="formaNuevoGente"
-                scope="request"
-                validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoGente.jsp"/>
-        </action>
-        <action path="/procesarRegistroGente"
-                type="edu.uag.iidis.scec.control.MCURegistrarGente"
-                parameter="procesarRegistroGente"
-                name="formaNuevoGente"
-                scope="request"
-                validate="true"
-                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoGente.jsp" >
-            <forward name="cancelar" path="/solicitarListarGentes.do" redirect="true"/>
-            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
-            <forward name="volver" path="solicitarRegistroGente.do" redirect="true"/>
-       </action>
-       <action path="/procesarRegistroGenteCiudades"
-                type="edu.uag.iidis.scec.control.MCURegistrarGente"
-                parameter="procesarRegistroGenteCiudades"
-                name="formaNuevoGenteCiudades"
-                scope="request"
-                validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/formaNuevoGenteCiudades.jsp"/>
-        </action>
-        <action path="/procesarListadoGenteOrd"
-                type="edu.uag.iidis.scec.control.MCUListarGentes"
-                parameter="solicitarOrdNombres"
-                name="formaListadoGentesOrdenar"
-                scope="request"
-                validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/formaListadoGentesOrdenar.jsp"/>
-            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
-        </action>
-
-        <action path="/solicitarListarPersonas"
+       <action path="/solicitarListarPersonas"
                 type="edu.uag.iidis.scec.control.MCUListarPersonas"
                 parameter="solicitarListarPersonas"
                 name="formaListadoPersonas"
@@ -338,15 +279,15 @@
                 name="formaNuevoPersona"
                 scope="request"
                 validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoPersona.jsp"/>
         </action>
         <action path="/procesarRegistroPersona"
                 type="edu.uag.iidis.scec.control.MCURegistrarPersona"
                 parameter="procesarRegistroPersona"
-                name="formaNuevaPersona"
+                name="formaNuevoPersona"
                 scope="request"
                 validate="true"
-                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp" >
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoPersona.jsp" >
             <forward name="cancelar" path="/solicitarListarPersonas.do" redirect="true"/>
             <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
             <forward name="volver" path="solicitarRegistroPersona.do" redirect="true"/>
@@ -354,10 +295,10 @@
        <action path="/procesarRegistroPersonaCiudades"
                 type="edu.uag.iidis.scec.control.MCURegistrarPersona"
                 parameter="procesarRegistroPersonaCiudades"
-                name="formaNuevaPersonaCiudades"
+                name="formaNuevoPersonaCiudades"
                 scope="request"
                 validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/formaNuevaPersonaCiudades.jsp"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/formaNuevoPersonaCiudades.jsp"/>
         </action>
         <action path="/procesarListadoPersonaOrd"
                 type="edu.uag.iidis.scec.control.MCUListarPersonas"
@@ -368,7 +309,6 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/formaListadoPersonasOrdenar.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
-
         <action path="/registroUsuario"
                 type="edu.uag.iidis.scec.control.MCURegistrarLogin"
                 parameter="solicitarRegistro"

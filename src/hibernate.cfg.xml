@@ -50,7 +50,6 @@
         <mapping resource="edu/uag/iidis/scec/modelo/Estado.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Pais.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Ciudad.hbm.xml"/>
-        <mapping resource="edu/uag/iidis/scec/modelo/Gente.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Login.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Persona.hbm.xml"/>
         
