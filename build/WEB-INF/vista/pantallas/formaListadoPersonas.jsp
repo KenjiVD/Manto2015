@@ -42,7 +42,7 @@
            
            <div class="td"  style="width:16%"><b><fmt:message key="formaListadoPersonas.etiqueta.administracion" /></b></div>
           </div>
-          <c:forEach var="persona" items="${formaListadoGentes.gentes}">
+          <c:forEach var="persona" items="${formaListadoPersonas.personas}">
               <div class="tr">
                   <div class="td" align="left" style="width:16%"><c:out value="${persona.nombres}"/></div>
                   <div class="td" align="left" style="width:16%"><c:out value="${persona.apellidos}"/></div>

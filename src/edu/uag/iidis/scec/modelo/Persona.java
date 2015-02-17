@@ -8,7 +8,7 @@ import java.util.*;
  * Esta clase es usada para representar un rol de un
  * usuario. 
  *
- * <p><a href="Gente.java.html"><i>Ver código fuente</i></a></p>
+ * <p><a href="Persona.java.html"><i>Ver código fuente</i></a></p>
  *
  * @author <a href="mailto:vramos@uag.mx">Victor Ramos</a>
  * @version 1.0
