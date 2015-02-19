@@ -31,7 +31,7 @@ public final class FormaListadoPersonasOrdenar
         return (this.ciudades);
     }
 
-    public void setPersonas(Collection gentes) {
+    public void setPersonas(Collection personas) {
         this.personas = personas;
         if (personas != null) {
           this.contador = personas.size();
