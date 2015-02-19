@@ -1,4 +1,4 @@
-$(document).ready( function(){
+$(document).on("ready",function(){
 	$('#ciudadBuscar').keyup(function() {
 	  	$('.buscar').css('display','block');
 	  	var busqueda = $("#ciudadBuscar").val();
@@ -15,15 +15,20 @@ $(document).ready( function(){
 		$.post("http://localhost:8080/ESY/procesarListadoPersonaOrd.do", { ordenar: "nombres", tipo: valorNombres })
 		.done(function(data) {
 		  	$('#tablecontent').html(data);
+		  	console.log(" Entro al .done ");
 		  	if(valorNombres==0) {
 		  		valorNombres=1;
+		  		console.log(" Primero "+valorNombres);
 		  	} else {
 		  		valorNombres=0;
+		  		console.log(" Primero Else"+valorNombres);
 		  	}
+		  	console.log(" Saliendo del .done ");
 		})
 		.fail(function(e) {
 		    console.log(e);
 	  	});
+	  	console.log(" Saliendo del .post ");
 	});
 	var valorApellidos = 0;
 	$( "#apellidos" ).click(function() {

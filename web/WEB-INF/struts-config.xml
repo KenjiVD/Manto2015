@@ -20,9 +20,6 @@
 
     <!-- Definición de Formas -->
     <form-beans>
-        <form-bean name="formaNuevaPersona"
-                   type="edu.uag.iidis.scec.vista.FormaNuevaPersona">
-        </form-bean>
         <form-bean name="formaNuevoRol"
                    type="edu.uag.iidis.scec.vista.FormaNuevoRol">
         </form-bean>
@@ -53,11 +50,11 @@
         <form-bean name="formaEliminarCiudad"
                    type="edu.uag.iidis.scec.vista.FormaEliminarCiudad">
         </form-bean>
-        <form-bean name="formaNuevoPersona"
-                   type="edu.uag.iidis.scec.vista.FormaNuevoPersona">
+        <form-bean name="formaNuevaPersona"
+                   type="edu.uag.iidis.scec.vista.FormaNuevaPersona">
         </form-bean>
-        <form-bean name="formaNuevoPersonaCiudades"
-                   type="edu.uag.iidis.scec.vista.FormaNuevoPersonaCiudades">
+        <form-bean name="formaNuevaPersonaCiudades"
+                   type="edu.uag.iidis.scec.vista.FormaNuevaPersonaCiudades">
         </form-bean>
         <form-bean name="formaListadoPersonas"
                    type="edu.uag.iidis.scec.vista.FormaListadoPersonas">
@@ -276,18 +273,18 @@
         <action path="/solicitarRegistroPersona"
                 type="edu.uag.iidis.scec.control.MCURegistrarPersona"
                 parameter="solicitarRegistroPersona"
-                name="formaNuevoPersona"
+                name="formaNuevaPersona"
                 scope="request"
                 validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoPersona.jsp"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp"/>
         </action>
         <action path="/procesarRegistroPersona"
                 type="edu.uag.iidis.scec.control.MCURegistrarPersona"
                 parameter="procesarRegistroPersona"
-                name="formaNuevoPersona"
+                name="formaNuevaPersona"
                 scope="request"
                 validate="true"
-                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoPersona.jsp" >
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp" >
             <forward name="cancelar" path="/solicitarListarPersonas.do" redirect="true"/>
             <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
             <forward name="volver" path="solicitarRegistroPersona.do" redirect="true"/>
@@ -295,10 +292,10 @@
        <action path="/procesarRegistroPersonaCiudades"
                 type="edu.uag.iidis.scec.control.MCURegistrarPersona"
                 parameter="procesarRegistroPersonaCiudades"
-                name="formaNuevoPersonaCiudades"
+                name="formaNuevaPersonaCiudades"
                 scope="request"
                 validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/formaNuevoPersonaCiudades.jsp"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/formaNuevaPersonaCiudades.jsp"/>
         </action>
         <action path="/procesarListadoPersonaOrd"
                 type="edu.uag.iidis.scec.control.MCUListarPersonas"
