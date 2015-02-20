@@ -149,19 +149,8 @@ public class PersonaDAO {
         try {
 			
 			
-//            String consultaCuentaRoles =
-//            "select count(*) from Gente r where r.nombre=?";
-//
- //           int resultado =
- //           ((Integer) HibernateUtil.getSession()
- //                          .find(consultaCuentaRoles, 
- //                                nombreRol,
- //                                StringType.INSTANCE)
- //                          .iterator()
- //                          .next()).intValue();
-// de acuerdo al nuevo formato
  
-			String hql = "select Nombres from personas where Nombres = :Nombres";
+			String hql = "select Nombres from Persona where Nombres = :Nombres";
 			
 			 if (log.isDebugEnabled()) {
            		 log.debug(hql + nombrePersona);
@@ -190,7 +179,7 @@ public class PersonaDAO {
 
         } catch (HibernateException ex) {
             if (log.isWarnEnabled()) {
-                log.warn("<HibernateException *******************");
+                log.warn("<HibernateException *******************"+ex.getMessage());
             }
             throw new ExcepcionInfraestructura(ex);
         }
