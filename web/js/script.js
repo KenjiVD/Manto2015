@@ -10,8 +10,9 @@ $(document).on("ready",function(){
 		    console.log(e);
 	  	});
 	});
-	var valorNombres = 0;
+	/*var valorNombres = 0;
 	$( "#nombres" ).click(function() {
+		//alert("Nombres Click");
 		$.post("http://localhost:8080/ESY/procesarListadoPersonaOrd.do", { ordenar: "nombres", tipo: valorNombres })
 		.done(function(data) {
 		  	$('#tablecontent').html(data);
@@ -90,8 +91,93 @@ $(document).on("ready",function(){
 		.fail(function(e) {
 		    console.log(e);
 	  	});
-	});
+	});*/
 });
+ //  funciones para ordenar
+
+ 	//****ordenar por nombre***//
+var valorNombres = 0;
+function nombre(){
+		$.post("http://localhost:8080/ESY/procesarListadoPersonaOrd.do", { ordenar: "nombres", tipo: valorNombres })
+		.done(function(data) {
+		  	$('#tablecontent').html(data);
+		  	if(valorNombres==0) {
+		  		valorNombres=1;
+		  	} else {
+		  		valorNombres=0;
+		  	}
+		})
+		.fail(function(e) {
+		    console.log(e);
+	  	});
+	}
+
+// *** ordenar por apellido***//
+var valorApellidos = 0;
+	function apellido() {
+		$.post("http://localhost:8080/ESY/procesarListadoPersonaOrd.do", { ordenar: "apellidos", tipo: valorApellidos })
+		.done(function(data) {
+		  	$('#tablecontent').html(data);
+		  	if(valorApellidos==0) {
+		  		valorApellidos=1;
+		  	} else {
+		  		valorApellidos=0;
+		  	}
+		})
+		.fail(function(e) {
+		    console.log(e);
+	  	});
+	}
+	//*** ordenar por direccion***//
+	var valorDireccion = 0;
+	function direccion() {
+		$.post("http://localhost:8080/ESY/procesarListadoPersonaOrd.do", { ordenar: "direccion", tipo: valorDireccion })
+		.done(function(data) {
+		  	$('#tablecontent').html(data);
+		  	if(valorDireccion==0) {
+		  		valorDireccion=1;
+		  	} else {
+		  		valorDireccion=0;
+		  	}
+		})
+		.fail(function(e) {
+		    console.log(e);
+	  	});
+	}
+// *** ordenar por telefono ***//
+	var valorTelefono = 0;
+	function telefono(){
+		$.post("http://localhost:8080/ESY/procesarListadoPersonaOrd.do", { ordenar: "telefono", tipo: valorTelefono })
+		.done(function(data) {
+		  	$('#tablecontent').html(data);
+		  	if(valorTelefono==0) {
+		  		valorTelefono=1;
+		  	} else {
+		  		valorTelefono=0;
+		  	}
+		})
+		.fail(function(e) {
+		    console.log(e);
+	  	});
+	}
+
+	//*** ordenar por ciudad ***//
+	var valorCiudad = 0;
+	function ciudad() {
+		$.post("http://localhost:8080/ESY/procesarListadoPersonaOrd.do", { ordenar: "ciudad", tipo: valorCiudad })
+		.done(function(data) {
+		  	$('#tablecontent').html(data);
+		  	if(valorCiudad==0) {
+		  		valorCiudad=1;
+		  	} else {
+		  		valorCiudad=0;
+		  	}
+		})
+		.fail(function(e) {
+		    console.log(e);
+	  	});
+	}
+
 function seleccionarCiudad(id, ciudad, estado) {
 	$('.buscar').css('display','none');
 	$("#idCiudad").val(id);

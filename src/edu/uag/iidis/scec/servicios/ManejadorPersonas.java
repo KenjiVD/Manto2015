@@ -43,16 +43,21 @@ public class ManejadorPersonas {
 
         Collection resultado;
 
-        if (log.isDebugEnabled()) {
-            log.debug(">guardarUsuario(usuario)");
-        }
-
         try {
             HibernateUtil.beginTransaction();
             resultado = dao.ordenarPor(tipo, tipoInt);
             HibernateUtil.commitTransaction();
+
+              if (log.isDebugEnabled()) {
+            log.debug("***Manejador personas ordenar: ok");
+        }
+
             return resultado;         
+       
         } catch (ExcepcionInfraestructura e) {
+             if (log.isDebugEnabled()) {
+            log.debug("***Manejador personas ordenar: failed");
+        }
             HibernateUtil.rollbackTransaction();
             return null;
         } finally {

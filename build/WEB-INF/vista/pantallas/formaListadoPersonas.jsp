@@ -25,7 +25,7 @@
       <div class="table" style="width:100%"  id="tablecontent">
           <div class="tr">
               <div class="td" colspan="4" style="padding-top:25px; padding-bottom:25px;">
-                  <a href="solicitarRegistroPersona.do" class="HipervinculoAdmon boton">Agregar nueva persona...</a>
+                  <a href="solicitarRegistroPersona.do" class="HipervinculoAdmon boton">Agregar nueva persona</a>
               </div>
           </div>
           <div class="tr">
@@ -34,11 +34,16 @@
               </div>
           </div>
           <div class="tr enlaces" style="background:#CCCCCC">
-           <div class="td" style="width:16%"><b id="nombres"><fmt:message key="formaListadoPersonas.etiqueta.nombres" /></b></div>
-           <div class="td" style="width:16%"><b id="apellidos"><fmt:message key="formaListadoPersonas.etiqueta.apellidos" /></b></div>
-           <div class="td" style="width:16%"><b id="direccion"><fmt:message key="formaListadoPersonas.etiqueta.direccion" /></b></div>
-           <div class="td" style="width:16%"><b id="telefono"><fmt:message key="formaListadoPersonas.etiqueta.telefono" /></b></div>
-           <div class="td" style="width:16%"><b id="ciudad"><fmt:message key="formaListadoPersonas.etiqueta.ciudad" /></b></div>
+           <div class="td" style="width:16%"><b id="nombres" onclick="nombre()">
+            <fmt:message key="formaListadoPersonas.etiqueta.nombres" /></b></div>
+           <div class="td" style="width:16%"><b id="apellidos" onclick="apellido()">
+            <fmt:message key="formaListadoPersonas.etiqueta.apellidos" /></b></div>
+           <div class="td" style="width:16%"><b id="direccion" onclick="direccion()">
+            <fmt:message key="formaListadoPersonas.etiqueta.direccion" /></b></div>
+           <div class="td" style="width:16%"><b id="telefono" onclick="telefono()">
+            <fmt:message key="formaListadoPersonas.etiqueta.telefono" /></b></div>
+           <div class="td" style="width:16%"><b id="ciudad" onclick="telefono()">
+            <fmt:message key="formaListadoPersonas.etiqueta.ciudad" /></b></div>
            
            <div class="td"  style="width:16%"><b><fmt:message key="formaListadoPersonas.etiqueta.administracion" /></b></div>
           </div>
