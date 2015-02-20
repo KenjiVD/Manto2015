@@ -143,9 +143,6 @@ public class CiudadDAO {
 
         Collection ciudades;
 
-        if (log.isDebugEnabled()) {
-            log.debug(">existeRol(nombreRol)");
-        }
 
         try {
             
@@ -157,15 +154,15 @@ public class CiudadDAO {
         
             Query query = HibernateUtil.getSession()
                                         .createQuery(hql);
-            if (log.isDebugEnabled()) {
-                 log.debug("<<<<<<<<< create query ok " );
-            }
+            
 
             query.setParameter("nombre", "%"+nombreCiudad+"%");
 
+            
             if (log.isDebugEnabled()) {
-                 log.debug("<<<<<<<<< set Parameter ok antes del query list >>>>>");
+                 log.debug("  ***query:   "+hql );
             }
+
             ciudades = query.list();
 
             return ciudades;

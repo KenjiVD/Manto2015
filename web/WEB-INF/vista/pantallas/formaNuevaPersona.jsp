@@ -78,13 +78,13 @@
                            size="50" 
                            style="display:none"
                            maxlength="100" />
-                  <!--
-                    <select name="idCiudad" >
+                  
+              <!--      <select name="idCiudad" >
                       <c:forEach var="ciudad" items="${formaNuevaPersona.ciudades}">
                         <option value='<c:out value="${ciudad.id}" />'><c:out value="${ciudad.nombre}" /></option>
                       </c:forEach>
                     </select>
-                  -->
+                -->
                 </div>
             </div>
             <div class="tr">

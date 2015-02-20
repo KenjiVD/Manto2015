@@ -62,11 +62,19 @@ public final class MCURegistrarPersona
         }
         Collection resultado = mr.buscarCiudades(forma.getciudadBuscar());
 
-        forma.setCiudades( resultado );
 
         ManejadorEstados mr2 = new ManejadorEstados();
         Collection resultado2 = mr2.listarEstados();
+        if(resultado==null||resultado2==null){
+          if (log.isDebugEnabled()) {
+            log.debug(">solicitarRegistroPersonaCiudades:*** resultado nulo");
+        }}else{
+         if (log.isDebugEnabled()) {
+            log.debug(">solicitarRegistroPersonaCiudades:*** resultado ok");
+        }
 
+        }
+        forma.setCiudades( resultado );
         forma.setEstados( resultado2 );
 
         if (log.isDebugEnabled()) {

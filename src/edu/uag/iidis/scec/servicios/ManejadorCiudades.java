@@ -43,7 +43,7 @@ public class ManejadorCiudades {
         Collection resultado;
 
         if (log.isDebugEnabled()) {
-            log.debug(">guardarUsuario(usuario)");
+            log.debug(">***Buscar Ciudad:"+ciudadBuscar);
         }
 
         try {
