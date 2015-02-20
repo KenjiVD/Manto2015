@@ -25,7 +25,7 @@ public final class MCUEliminarPersona
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
-    public ActionForward procesarEliminarGente(
+    public ActionForward procesarEliminarPersona(
                 ActionMapping mapping,
                 ActionForm form,
                 HttpServletRequest request,
@@ -33,7 +33,7 @@ public final class MCUEliminarPersona
             throws Exception {
 
         if (log.isDebugEnabled()) {
-            log.debug(">procesarEliminarGente");
+            log.debug(">procesarEliminarPersona");
         }
       
         FormaEliminarPersona forma = (FormaEliminarPersona)form;

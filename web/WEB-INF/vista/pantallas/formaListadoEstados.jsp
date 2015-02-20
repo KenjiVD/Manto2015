@@ -42,10 +42,10 @@
                 <div class="td" align="left" style="width:20%"><c:out value="${estado.nombre}"/></div>
                 <div class="td" align="left" style="width:58%"><c:out value="${estado.descripcion}"/></div>
                 <div class="td" align="left" style="width:20%">
-                    <a href='solicitarModificarEstado.do?id=<c:out value="${estado.id}"/>'
+               <!--     <a href='solicitarModificarEstado.do?id=<c:out value="${estado.id}"/>'
 					   class="HipervinculoAdmon">
                         <fmt:message key="formaListadoEstados.etiqueta.modificar" />
-                    </a>
+                    </a>-->
                     <a href='procesarEliminarEstado.do?id=<c:out value="${estado.id}"/>'
 					   onClick="javascript: return EliminarEstado('<c:out value="${estado.nombre}"/>')"
 					   class="HipervinculoAdmon">

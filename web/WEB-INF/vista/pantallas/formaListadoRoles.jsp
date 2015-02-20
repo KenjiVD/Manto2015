@@ -42,10 +42,10 @@
                 <div class="td" align="left" style="width:20%"><c:out value="${rol.nombre}"/></div>
                 <div class="td" align="left" style="width:58%"><c:out value="${rol.descripcion}"/></div>
                 <div class="td" align="left" style="width:20%">
-                    <a href='solicitarModificarRol.do?id=<c:out value="${rol.id}"/>'
+                   <!-- <a href='solicitarModificarRol.do?id=<c:out value="${rol.id}"/>'
 					   class="HipervinculoAdmon">
                         <fmt:message key="formaListadoRoles.etiqueta.modificar" />
-                    </a>
+                    </a>-->
                     <a href='procesarEliminarRol.do?id=<c:out value="${rol.id}"/>'
 					   onClick="javascript: return EliminarRol('<c:out value="${rol.nombre}"/>')"
 					   class="HipervinculoAdmon">

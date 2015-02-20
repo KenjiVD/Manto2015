@@ -57,10 +57,10 @@
                     
                   </div>
                   <div class="td" align="left" style="width:16%">
-                      <a href='solicitarModificarPersona.do?id=<c:out value="${persona.id}"/>'
+               <!--       <a href='solicitarModificarPersona.do?id=<c:out value="${persona.id}"/>'
                class="HipervinculoAdmon">
                           <fmt:message key="formaListadoPersonas.etiqueta.modificar" />
-                      </a>
+                      </a>-->
                       <a href='procesarEliminarPersona.do?id=<c:out value="${persona.id}"/>'
                onClick="javascript: return EliminarPersona('<c:out value="${persona.nombres}"/>')"
                class="HipervinculoAdmon">
