@@ -59,7 +59,6 @@
                         <c:out value="${ciudad.nombre}"/>
                       </c:if>
                     </c:forEach>
-                    
                   </div>
                   <div class="td" align="left" style="width:16%">
                <!--       <a href='solicitarModificarPersona.do?id=<c:out value="${persona.id}"/>'
