@@ -40,7 +40,7 @@ CREATE TABLE `ciudades` (
 
 LOCK TABLES `ciudades` WRITE;
 /*!40000 ALTER TABLE `ciudades` DISABLE KEYS */;
-INSERT INTO `ciudades` VALUES (1,'Tierra Media',1,'Mordo');
+INSERT INTO `ciudades` VALUES (2,'',1,'Guadalajara'),(3,'',2,'Tuxtla'),(5,'',2,'Chiapa de Corzo'),(6,'',8,'Chilpancingo'),(7,'',8,'Iguala'),(8,'',8,'Ayotzinapa'),(9,'',9,'Mordor');
 /*!40000 ALTER TABLE `ciudades` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +57,7 @@ CREATE TABLE `estados` (
   `descripcion` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`idEstado`),
   UNIQUE KEY `nombre_UNIQUE` (`nombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,8 +66,34 @@ CREATE TABLE `estados` (
 
 LOCK TABLES `estados` WRITE;
 /*!40000 ALTER TABLE `estados` DISABLE KEYS */;
-INSERT INTO `estados` VALUES (1,'Jalisco','');
+INSERT INTO `estados` VALUES (1,'Jalisco',''),(2,'Chiapas',''),(3,'Tabasco',''),(4,'Quintana Roo',''),(5,'Yucatan',''),(6,'Campeche',''),(7,'Oaxaca',''),(8,'Guerrero',''),(9,'Tierra Media','');
 /*!40000 ALTER TABLE `estados` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `historialrespuestas`
+--
+
+DROP TABLE IF EXISTS `historialrespuestas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `historialrespuestas` (
+  `idHistorial` int(11) NOT NULL AUTO_INCREMENT,
+  `idTest` int(11) NOT NULL,
+  `idPregunta` int(11) NOT NULL,
+  `idRespuesta` int(11) NOT NULL,
+  `Resultado` int(11) NOT NULL COMMENT 'Use 0 para indicar respuesta incorrecta y 1 para indicar respuesta correcta',
+  PRIMARY KEY (`idHistorial`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `historialrespuestas`
+--
+
+LOCK TABLES `historialrespuestas` WRITE;
+/*!40000 ALTER TABLE `historialrespuestas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `historialrespuestas` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -85,7 +111,7 @@ CREATE TABLE `personas` (
   `Direccion` varchar(100) DEFAULT NULL,
   `Telefono` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idPersona`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,8 +120,58 @@ CREATE TABLE `personas` (
 
 LOCK TABLES `personas` WRITE;
 /*!40000 ALTER TABLE `personas` DISABLE KEYS */;
-INSERT INTO `personas` VALUES (1,1,'Emanuel','Roque Pimentel','Enrique Segoviano','5555925');
+INSERT INTO `personas` VALUES (1,1,'Emanuel','Roque Pimentel','Enrique Segoviano','5555925'),(2,1,'Adriana','Roque Pimentel','Las Lomas','5555825'),(3,1,'Rafael','Roque Medina','Vista Hermosa Popular','6636020'),(4,7,'Yarib Octavio','Lopez Hernandez','Colonia centro','2367893367'),(5,0,'2345678','123456789','23456789','qwertyuio'),(6,9,'Orco','Orco','Orco','0987654321');
 /*!40000 ALTER TABLE `personas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pregunta`
+--
+
+DROP TABLE IF EXISTS `pregunta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pregunta` (
+  `idPregunta` int(11) NOT NULL AUTO_INCREMENT,
+  `idSeccion` int(11) NOT NULL,
+  `posicion` int(11) NOT NULL,
+  `idRespuestaCorrecta` int(11) NOT NULL,
+  `pregunta` varchar(145) NOT NULL,
+  PRIMARY KEY (`idPregunta`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pregunta`
+--
+
+LOCK TABLES `pregunta` WRITE;
+/*!40000 ALTER TABLE `pregunta` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pregunta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `respuesta`
+--
+
+DROP TABLE IF EXISTS `respuesta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `respuesta` (
+  `idRespuesta` int(11) NOT NULL AUTO_INCREMENT,
+  `idPregunta` int(11) NOT NULL,
+  `respuesta` varchar(200) NOT NULL,
+  PRIMARY KEY (`idRespuesta`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `respuesta`
+--
+
+LOCK TABLES `respuesta` WRITE;
+/*!40000 ALTER TABLE `respuesta` DISABLE KEYS */;
+/*!40000 ALTER TABLE `respuesta` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -121,6 +197,53 @@ CREATE TABLE `roles` (
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `seccion`
+--
+
+DROP TABLE IF EXISTS `seccion`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `seccion` (
+  `idSeccion` int(11) NOT NULL AUTO_INCREMENT,
+  `idTest` int(11) NOT NULL,
+  `Nombre` varchar(45) NOT NULL,
+  PRIMARY KEY (`idSeccion`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `seccion`
+--
+
+LOCK TABLES `seccion` WRITE;
+/*!40000 ALTER TABLE `seccion` DISABLE KEYS */;
+/*!40000 ALTER TABLE `seccion` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test`
+--
+
+DROP TABLE IF EXISTS `test`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test` (
+  `idTest` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(45) NOT NULL,
+  PRIMARY KEY (`idTest`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test`
+--
+
+LOCK TABLES `test` WRITE;
+/*!40000 ALTER TABLE `test` DISABLE KEYS */;
+/*!40000 ALTER TABLE `test` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -185,4 +308,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-02-16 19:19:30
+-- Dump completed on 2015-03-07 13:49:28
