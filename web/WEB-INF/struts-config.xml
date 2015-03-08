@@ -20,6 +20,9 @@
 
     <!-- Definición de Formas -->
     <form-beans>
+        <form-bean name="formaMenuTest"
+                   type="edu.uag.iidis.scec.vista.FormaMenuTest">
+        </form-bean>
         <form-bean name="formaNuevoRol"
                    type="edu.uag.iidis.scec.vista.FormaNuevoRol">
         </form-bean>
@@ -81,6 +84,8 @@
     <action-mappings>
         <action path="/irInicio"
                 forward="/WEB-INF/vista/pantallas/pantallaInicio.jsp" />
+        <action path="/irMenu"
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaMenuTest.jsp" />
         <action path="/irBienvenida"
                 forward="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp" />
         <action path="/irAyuda"
