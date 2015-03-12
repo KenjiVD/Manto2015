@@ -1,17 +1,32 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+}
 #seleccion{
 	position: absolute;
 	left: 350px;
 	top: 200px;
 	border-style: solid;
 	border-radius: 5px;
-	border-color: teal;
+	border-color: #008B8B;
 	width: 600px;
 	text-align: center;
+}
+#seleccion1{
+	position: absolute;
+	left: 300px;
+	top: 150px;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: #008B8B;
+	width: 750px;
+	height: 350px;
+	text-align: center;
+	overflow: scroll;
 }
 #seleccion p{
 	width: 500px;
 	height: 50px;
-	background-color: darkcyan;
+	background-color: #20B2AA;
 	margin-left: 50px;
 }
 #seleccion a{
@@ -24,6 +39,70 @@
 #seleccion p:hover{
 	opacity: 0.8;
 }
+#test{
+	margin-top: 40px;
+	border-bottom: solid;
+	border-color: #008B8B;
+	
+}
+#seccion{
+	border-bottom: solid;
+	border-color: #008B8B;
+}
+#seleccion2{
+	position: absolute;
+	left: 300px;
+	top: 150px;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: #008B8B;
+	width: 750px;
+	height: 350px;
+	text-align: center;
+	overflow: scroll;
+}
+#seleccion2 p{
+	width: 500px;
+	height: 50px;
+	background-color: #20B2AA;
+	margin-left: 150px;
+}
+#seleccion2 a{
+	text-decoration: none;
+	background-color:#20B2AA;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 25px;
+	color: black;
+}
+#seleccion2 p:hover{
+	opacity: 0.8;
+}
+button{
+	width: 100px;
+	height: 35px;
+	cursor: pointer;
+	background-color: #20B2AA;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+button:hover{
+	opacity: 0.7;
+}
+#cratepregunta{
+	margin-left: 30px;
+}
+input{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+select{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	border-color: #20B2AA;
+}
+
 
 body {
 	margin:0 0 0 0;

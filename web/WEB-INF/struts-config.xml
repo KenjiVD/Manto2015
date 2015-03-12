@@ -23,6 +23,15 @@
         <form-bean name="formaMenuTest"
                    type="edu.uag.iidis.scec.vista.FormaMenuTest">
         </form-bean>
+        <form-bean name="formaNuevosFormulario"
+                   type="edu.uag.iidis.scec.vista.formaNuevosFormulario">
+        </form-bean>
+        <form-bean name="formaListadoSeccion"
+                   type="edu.uag.iidis.scec.vista.formaListadoSeccion">
+        </form-bean>
+        <form-bean name="formaListadoTest"
+                   type="edu.uag.iidis.scec.vista.formaListadoTest">
+        </form-bean>
         <form-bean name="formaNuevoRol"
                    type="edu.uag.iidis.scec.vista.FormaNuevoRol">
         </form-bean>
@@ -86,6 +95,12 @@
                 forward="/WEB-INF/vista/pantallas/pantallaInicio.jsp" />
         <action path="/irMenu"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaMenuTest.jsp" />
+        <action path="/irNuevos"
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevosFormulario.jsp" />
+        <action path="/irListado"
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoTest.jsp" />
+        <action path="/irListadoSeccion"
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoSeccion.jsp" />
         <action path="/irBienvenida"
                 forward="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp" />
         <action path="/irAyuda"
