@@ -134,11 +134,11 @@ DROP TABLE IF EXISTS `pregunta`;
 CREATE TABLE `pregunta` (
   `idPregunta` int(11) NOT NULL AUTO_INCREMENT,
   `idSeccion` int(11) NOT NULL,
-  `posicion` int(11) NOT NULL,
-  `idRespuestaCorrecta` int(11) NOT NULL,
+  `posicion` int(11) DEFAULT NULL,
+  `idRespuestaCorrecta` int(11) DEFAULT NULL,
   `pregunta` varchar(145) NOT NULL,
   PRIMARY KEY (`idPregunta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -147,6 +147,7 @@ CREATE TABLE `pregunta` (
 
 LOCK TABLES `pregunta` WRITE;
 /*!40000 ALTER TABLE `pregunta` DISABLE KEYS */;
+INSERT INTO `pregunta` VALUES (1,1,1,1,'Pregunta1'),(2,2,2,5,'Pregunta2'),(3,3,3,9,'Pregunta3'),(4,4,4,10,'Pregunta4'),(5,1,5,14,'Pregunta5'),(6,2,6,18,'Pregunta6'),(7,3,7,19,'Pregunta7'),(8,4,8,23,'Pregunta8');
 /*!40000 ALTER TABLE `pregunta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -162,7 +163,7 @@ CREATE TABLE `respuesta` (
   `idPregunta` int(11) NOT NULL,
   `respuesta` varchar(200) NOT NULL,
   PRIMARY KEY (`idRespuesta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -171,6 +172,7 @@ CREATE TABLE `respuesta` (
 
 LOCK TABLES `respuesta` WRITE;
 /*!40000 ALTER TABLE `respuesta` DISABLE KEYS */;
+INSERT INTO `respuesta` VALUES (1,1,'Respuesta1'),(2,1,'Respuesta2'),(3,1,'Respuesta3'),(4,2,'Respuesta4'),(5,2,'Respuesta5'),(6,2,'Respuesta6'),(7,3,'Respuesta7'),(8,3,'Respuesta8'),(9,3,'Respuesta9'),(10,4,'Respuesta10'),(11,4,'Respuesta11'),(12,4,'Respuesta12'),(13,5,'Respuesta13'),(14,5,'Respuesta14'),(15,5,'Respuesta15'),(16,6,'Respuesta16'),(17,6,'Respuesta17'),(18,6,'Respuesta18'),(19,7,'Respuesta19'),(20,7,'Respuesta20'),(21,7,'Respuesta21'),(22,8,'Respuesta22'),(23,8,'Respuesta23'),(24,8,'Respuesta24');
 /*!40000 ALTER TABLE `respuesta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -211,7 +213,7 @@ CREATE TABLE `seccion` (
   `idTest` int(11) NOT NULL,
   `Nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`idSeccion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -220,6 +222,7 @@ CREATE TABLE `seccion` (
 
 LOCK TABLES `seccion` WRITE;
 /*!40000 ALTER TABLE `seccion` DISABLE KEYS */;
+INSERT INTO `seccion` VALUES (1,1,'Español'),(2,2,'Matematicas'),(3,1,'Ciencias Naturales'),(4,2,'Fisica');
 /*!40000 ALTER TABLE `seccion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -234,7 +237,7 @@ CREATE TABLE `test` (
   `idTest` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`idTest`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -243,6 +246,7 @@ CREATE TABLE `test` (
 
 LOCK TABLES `test` WRITE;
 /*!40000 ALTER TABLE `test` DISABLE KEYS */;
+INSERT INTO `test` VALUES (1,'Prueba1'),(2,'Prueba2');
 /*!40000 ALTER TABLE `test` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -308,4 +312,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-07 13:49:28
+-- Dump completed on 2015-03-13 21:45:47
