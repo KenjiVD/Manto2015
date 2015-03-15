@@ -14,7 +14,7 @@ import org.apache.struts.validator.ValidatorForm;
  *
  * @author Victor Ramos
  */
-public final class FormaListadoSeccion
+public final class FormaNuevaPersonaCiudades
         extends ValidatorForm {
 
     private Collection ciudades;

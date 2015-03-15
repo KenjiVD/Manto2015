@@ -29,10 +29,10 @@ public class Pregunta extends ClaseBase
         this.idPregunta = id;
     }
 
-    public Pregunta(Long idPregunta, Long idSeccion,Long posicion,Long idRespuestaCorrecta,String pregunta){
-        this.idPregunta=idPregunta;
+    public Pregunta(Long idSeccion,Long idRespuestaCorrecta,String pregunta){
+      //  this.idPregunta=idPregunta;
         this.idSeccion=idSeccion;
-        this.posicion=posicion;
+      //  this.posicion=posicion;
         this.idRespuestaCorrecta=idRespuestaCorrecta;
         this.pregunta=pregunta;
     }

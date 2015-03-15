@@ -26,8 +26,8 @@ public class Test extends ClaseBase
         this.idTest = id;
     }
 
-    public Test(Long idTest,String nombre){
-        this.idTest=idTest;
+    public Test(String nombre){
+       
         this.nombre=nombre;
     }
 

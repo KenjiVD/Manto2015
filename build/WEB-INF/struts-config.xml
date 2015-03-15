@@ -111,6 +111,21 @@
                 name="FormaNuevaPersona"
                 scope="request"
                 validate="false">
+            <!--    ---------Test------------>
+         <action path="/solicitarListarTest"
+                type="edu.uag.iidis.scec.control.MCUListarTest"
+                parameter="solicitarListarTest"
+                name="formaListadoTest"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoTest.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+
+
+
+
+        <!--    ---------Test------------>
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp"/>
         </action>
         <action path="/solicitarListarRoles"

@@ -28,8 +28,7 @@ public class Seccion extends ClaseBase
         this.idSeccion = id;
     }
 
-    public Seccion(Long idSeccion,Long idTest,String nombre){
-        this.idSeccion=idSeccion;
+    public Seccion(Long idTest,String nombre){
         this.idTest=idTest;
         this.nombre=nombre;
     }
