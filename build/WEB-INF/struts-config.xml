@@ -111,7 +111,7 @@
                 name="FormaNuevaPersona"
                 scope="request"
                 validate="false">
-            <!--    ---------Test------------>
+            <!--   Test-->
          <action path="/solicitarListarTest"
                 type="edu.uag.iidis.scec.control.MCUListarTest"
                 parameter="solicitarListarTest"
@@ -125,7 +125,7 @@
 
 
 
-        <!--    ---------Test------------>
+        <!--Test-->
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp"/>
         </action>
         <action path="/solicitarListarRoles"
