@@ -33,7 +33,7 @@ public final class MCURegistrarSeccion
                 HttpServletResponse response)
             throws Exception {
 
-        FormaNuevoSeccion forma = (FormaNuevoSeccion)form;
+        FormaNuevaSeccion forma = (FormaNuevaSeccion)form;
 
         ManejadorTest mr = new ManejadorTest();
         Collection resultado = mr.listarTest();
@@ -70,7 +70,7 @@ public final class MCURegistrarSeccion
 
         
         // Se obtienen los datos para procesar el registro
-        FormaNuevoSeccion forma = (FormaNuevoSeccion)form;
+        FormaNuevaSeccion forma = (FormaNuevaSeccion)form;
 
         Seccion seccion = new Seccion(forma.getidTest(), forma.getNombre());
 

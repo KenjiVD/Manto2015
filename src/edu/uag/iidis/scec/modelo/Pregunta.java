@@ -21,6 +21,9 @@ public class Pregunta extends ClaseBase
     private Long posicion;
     private Long idRespuestaCorrecta;
     private String pregunta;
+    private String repuesta1;
+    private String respuesta2;
+    private String respuestac;
 
     public Pregunta() {
     }
@@ -29,12 +32,13 @@ public class Pregunta extends ClaseBase
         this.idPregunta = id;
     }
 
-    public Pregunta(Long idSeccion,Long idRespuestaCorrecta,String pregunta){
+    public Pregunta(Long idSeccion,String respuestac,String pregunta){
       //  this.idPregunta=idPregunta;
         this.idSeccion=idSeccion;
       //  this.posicion=posicion;
-        this.idRespuestaCorrecta=idRespuestaCorrecta;
+        //this.idRespuestaCorrecta=idRespuestaCorrecta;
         this.pregunta=pregunta;
+        this.respuestac=respuestac;
     }
 
     /**

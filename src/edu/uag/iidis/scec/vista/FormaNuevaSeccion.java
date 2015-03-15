@@ -14,7 +14,7 @@ import org.apache.struts.validator.ValidatorForm;
  *
  * @author Victor Ramos
  */
-public final class FormaNuevoSeccion
+public final class FormaNuevaSeccion
         extends ValidatorForm {
 
     private Collection test;
@@ -24,15 +24,15 @@ public final class FormaNuevoSeccion
 
 
     public void setTest(Collection Test) {
-        this.Test = Test;
-        if (Test != null) {
-          this.contador = Test.size();
+        this.test = test;
+        if (test != null) {
+          this.contador = test.size();
         } else
           this.contador = -1;
     }
 
     public Collection getTest() {
-        return (this.Test);
+        return (this.test);
     }
 
     public void setNombre(String nombre) {

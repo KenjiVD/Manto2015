@@ -82,8 +82,6 @@ public class PreguntaDAO {
 
     public Collection buscarPorEjemplo(Pregunta pregunta)
             throws ExcepcionInfraestructura {
-
-
         Collection preguntas;
  
         if (log.isDebugEnabled()) {
@@ -91,9 +89,8 @@ public class PreguntaDAO {
         }
 
         try {
-            Criteria criteria = HibernateUtil.getSession()
-                                             .createCriteria(Pregunta.class);
-            preguntas = criteria.add(Example.create(preguntas)).list();
+            Criteria criteria = HibernateUtil.getSession().createCriteria(Pregunta.class);
+            preguntas = criteria.add(Example.create(pregunta)).list();
         } catch (HibernateException e) {
             if (log.isWarnEnabled()) {
                 log.warn("<HibernateException");

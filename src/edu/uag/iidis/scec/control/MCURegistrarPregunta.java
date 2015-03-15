@@ -38,7 +38,7 @@ public final class MCURegistrarPregunta
         ManejadorSecciones mr = new ManejadorSecciones();
         Collection resultado = mr.listarSecciones();
 
-        forma.setSecciones( resultado );
+        forma.setSeccion( resultado );
 
         if (log.isDebugEnabled()) {
             log.debug(">solicitarRegistroPregunta");
@@ -54,7 +54,7 @@ public final class MCURegistrarPregunta
                 HttpServletResponse response)
             throws Exception {
 
-        FormaNuevaPreguntaSecciones forma = (FormaNuevaPreguntaSecciones)form;
+        FormaNuevaPreguntaSeccion forma = (FormaNuevaPreguntaSeccion)form;
 
         ManejadorSecciones mr = new ManejadorSecciones();
         if (log.isDebugEnabled()) {
@@ -108,7 +108,7 @@ public final class MCURegistrarPregunta
         // Se obtienen los datos para procesar el registro
         FormaNuevaPregunta forma = (FormaNuevaPregunta)form;
 
-        Pregunta pregunta = new Pregunta(forma.getidSeccion(),forma.getidRespuestaCorrecta(),forma.getPregunta());
+        Pregunta pregunta = new Pregunta(forma.getidSeccion(),forma.getRespuestaCorrecta(),forma.getPregunta());
 
         ManejadorPreguntas mr = new ManejadorPreguntas();
         int resultado = mr.crearPregunta(pregunta);

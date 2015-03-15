@@ -10,54 +10,53 @@ import org.apache.struts.validator.ValidatorForm;
 
 
 /**
- * Form bean para el registro de una nueva persona.
+ * Form bean para el registro de una nueva Pregunta.
  *
  * @author Victor Ramos
  */
-public final class FormaNuevaPersonaCiudades
+public final class FormaNuevaPreguntaSeccion
         extends ValidatorForm {
-
-    private Collection ciudades;
-    private Collection estados;
+    private Collection secciones;
+    private Collection test;
     private int contador;
-    private String ciudadBuscar;
+    private String seccionBuscar;
 
-    public void setCiudades(Collection ciudades) {
-        this.ciudades = ciudades;
-        if (ciudades != null) {
-          this.contador = ciudades.size();
+    public void setSecciones(Collection secciones) {
+        this.secciones = secciones;
+        if (secciones != null) {
+          this.contador = secciones.size();
         } else
           this.contador = -1;
     }
 
-    public Collection getCiudades() {
-        return (this.ciudades);
+    public Collection getSecciones() {
+        return (this.secciones);
     }
 
-    public void setEstados(Collection estados) {
-        this.estados = estados;
-        if (estados != null) {
-          this.contador = estados.size();
+    public void setTest(Collection test) {
+        this.test = test;
+        if (test != null) {
+          this.contador = test.size();
         } else
           this.contador = -1;
     }
 
-    public Collection getEstados() {
-        return (this.estados);
+    public Collection getTest() {
+        return (this.test);
     }
 
-    public void setciudadBuscar(String ciudadBuscar) {
-        this.ciudadBuscar = ciudadBuscar;
+    public void setSeccionBuscar(String seccionBuscar) {
+        this.seccionBuscar = seccionBuscar;
     }
 
-    public String getciudadBuscar() {
-        return (this.ciudadBuscar);
+    public String getSeccionBuscar() {
+        return (this.seccionBuscar);
     }
 
 
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {
-        ciudadBuscar=null;
+        seccionBuscar=null;
     }
 
 

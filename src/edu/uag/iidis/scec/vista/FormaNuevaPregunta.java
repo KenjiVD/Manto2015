@@ -41,8 +41,8 @@ public final class FormaNuevaPregunta
         this.pregunta = pregunta;
     }
 
-    public String getNombre() {
-        return (this.nombre);
+    public String getPregunta() {
+        return (this.pregunta);
     }
 
 

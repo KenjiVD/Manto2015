@@ -38,7 +38,7 @@ public class ManejadorPreguntas {
             HibernateUtil.closeSession();
         }
     }
-
+/*
     public Collection listarPreguntasOrd(String tipo, int tipoInt) {
 
         Collection resultado;
@@ -63,7 +63,7 @@ public class ManejadorPreguntas {
         } finally {
             HibernateUtil.closeSession();
         }
-    }
+    }*/
 
     public void eliminarPregunta(Long id) {
         if (log.isDebugEnabled()) {
@@ -98,7 +98,7 @@ public class ManejadorPreguntas {
         try {
             HibernateUtil.beginTransaction();           
             
-            if (dao.existePregunta(pregunta.getNombre())) {
+            if (dao.existePregunta(pregunta.getPregunta())) {
                resultado = 1; // Excepción. El nombre de Pregunta ya existe
             } else {
 
