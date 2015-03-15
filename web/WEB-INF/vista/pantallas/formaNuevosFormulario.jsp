@@ -4,13 +4,16 @@
 
      <div id="seleccion1">
 		<div id="test">
+			<form action="NuevoTest.do" method="post">
 			<h1>Nuevo Test</h1>
-			<input placeholder="Nombre Test"><br><br>
-			<button>Agregar Test</button><br><br>
+			<input type="text" name="nombretest" placeholder="Nombre Test"><br><br>
+			<input type"submit" value="Nuevo Test" class="envio" /><br><br>
+			</form>
 		</div>
 		<div id="seccion">
+			<form action="NuevaSeccion.do" method="post">
 			<h1>Nueva Sección</h1>
-			<select>
+			<select name="selecttest">
 				<option>Test1</option>
 				<option>Test1</option>
 				<option>Test1</option>
@@ -18,12 +21,14 @@
 				<option>Test1</option>
 			</select>
 			<br><br>
-			<input placeholder="Nombre Sección"><br><br>
-			<button>Agregar Sección</button><br><br>
+			<input type="text" name="nombreseccion" placeholder="Nombre Sección"><br><br>
+			<input type"submit" value="Agregar Sección" class="envio" /><br><br>
+			</form>
 		</div>
 		<div id="pregunta">
+			<form action="NuevaPregunta.do" method="post">
 			<h1>Nueva Pregunta</h1>
-			<select>
+			<select name="selecttest">
 				<option>Test 1</option>
 				<option>Test 1</option>
 				<option>Test 1</option>
@@ -31,7 +36,7 @@
 				<option>Test 1</option>
 			</select>
 			<br><br>
-			<select>
+			<select name="selectsec">
 				<option>Sección 1</option>
 				<option>Sección 1</option>
 				<option>Sección 1</option>
@@ -39,18 +44,19 @@
 				<option>Sección 1</option>
 			</select>
 			<br><br>
-			<input class="pregunta" placeholder="Pregunta"><br><br>
+			<input type="text" name="nombrepregunta" class="pregunta" placeholder="Pregunta"><br><br>
 			<div id="cratepregunta">
-				<input placeholder="Respuesta 1">
-				<input type="radio">
+				<input type="text" name="respuestauno" placeholder="Respuesta 1">
+				<input name="rescor" type="radio">
 				<br><br>
-				<input placeholder="Respuesta 2">
-				<input type="radio">
+				<input type="text" name="respuestados" placeholder="Respuesta 2">
+				<input name="rescor" type="radio">
 				<br><br>
-				<input placeholder="Respuesta 3">
-				<input type="radio">
+				<input type="text" name="respuestatres" placeholder="Respuesta 3">
+				<input name="rescor" type="radio">
 				<br><br>
 			</div>
-			<button>Agregar Pregunta</button><br><br>
+			<input type"submit" value="Nueva Pregunta" class="envio" /><br><br>
+			</form>
 		</div>
 	</div>
