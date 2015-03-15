@@ -187,7 +187,7 @@ public class HibernateUtil {
                 threadSession.set(s);
             }
         } catch (HibernateException ex) {
-            log.error("<HibernateException");
+            log.error("****<HibernateException");
             throw new ExcepcionInfraestructura(ex);
         }
 

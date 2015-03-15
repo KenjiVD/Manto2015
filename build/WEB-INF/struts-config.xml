@@ -30,7 +30,7 @@
                    type="edu.uag.iidis.scec.vista.formaListadoSeccion">
         </form-bean>
         <form-bean name="formaListadoTest"
-                   type="edu.uag.iidis.scec.vista.formaListadoTest">
+                   type="edu.uag.iidis.scec.vista.FormaListadoTest">
         </form-bean>
         <form-bean name="formaNuevoRol"
                    type="edu.uag.iidis.scec.vista.FormaNuevoRol">
@@ -111,6 +111,8 @@
                 name="FormaNuevaPersona"
                 scope="request"
                 validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp"/>
+                </action>
             <!--   Test-->
          <action path="/solicitarListarTest"
                 type="edu.uag.iidis.scec.control.MCUListarTest"
@@ -126,8 +128,8 @@
 
 
         <!--Test-->
-            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp"/>
-        </action>
+        
+        
         <action path="/solicitarListarRoles"
                 type="edu.uag.iidis.scec.control.MCUListarRoles"
                 parameter="solicitarListarRoles"

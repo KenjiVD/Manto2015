@@ -35,9 +35,7 @@
           </div>
           <div class="tr enlaces" style="background:#CCCCCC">
            <div class="td" style="width:16%"><b id="nombre">
-            <fmt:message key="formaListadoTest.etiqueta.nombres" /></b></div>
-           <div class="td" style="width:16%"><b id="seccion">
-           	<fmt:message key="formaListadoTest.etiqueta.seccion" /></b></div>
+            <fmt:message key="formaListadoTest.etiqueta.nombre" /></b></div>
          
            
            <div class="td"  style="width:16%"><b><fmt:message key="formaListadoTest.etiqueta.administracion" /></b></div>
