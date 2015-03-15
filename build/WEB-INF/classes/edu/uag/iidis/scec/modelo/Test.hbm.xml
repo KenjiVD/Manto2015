@@ -13,7 +13,7 @@
             <generator class="increment">
             </generator>
         </id>
-        <property name="Nombre"
+        <property name="nombre"
             type="java.lang.String"
             not-null="true" />
         

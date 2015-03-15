@@ -16,14 +16,14 @@ import java.util.*;
 public class Test extends ClaseBase 
         implements Serializable {
 
-    private Long idTest;
+    private Long id;
     private String nombre;
 
     public Test() {
     }
 
     public Test(Long id){
-        this.idTest = id;
+        this.id = id;
     }
 
     public Test(String nombre){
@@ -35,12 +35,12 @@ public class Test extends ClaseBase
      * Regresa el id del rol.
      * @return Long
      */
-    public Long getIdTest() {
-        return this.idTest;
+    public Long getId() {
+        return this.id;
     }
 
-    public void setIdTest(Long id) {
-        this.idTest = id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     // ID Ciudad

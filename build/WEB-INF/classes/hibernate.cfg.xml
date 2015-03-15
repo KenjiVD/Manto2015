@@ -52,6 +52,8 @@
         <mapping resource="edu/uag/iidis/scec/modelo/Ciudad.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Login.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Persona.hbm.xml"/>
+        <mapping resource="edu/uag/iidis/scec/modelo/Test.hbm.xml"/>
+
         
     </session-factory>
 
