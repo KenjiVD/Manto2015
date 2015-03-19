@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
     <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
+    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
     <section>
       <div class="col-md-8 card_style top-space center-block no-float">
