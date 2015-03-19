@@ -37,21 +37,10 @@
           <div class="tr enlaces" style="background:#CCCCCC">
            <div class="td" style="width:16%"><b id="nombre">
             <fmt:message key="formaListadoTest.etiqueta.nombre" /></b></div>
-         
-           
-           <div class="td"  style="width:16%"><b><fmt:message key="formaListadoTest.etiqueta.administracion" /></b></div>
           </div>
           <c:forEach var="test" items="${formaListadoTest.test}">
               <div class="tr">
-                  <div class="td" align="left" style="width:16%"><c:out value="${test.nombre}"/></div>
-                  </div>
-                  <div class="td" align="left" style="width:16%">
-                      <a href='procesarEliminarTest.do?id=<c:out value="${test.id}"/>'
-               onClick="javascript: return EliminarTest('<c:out value="${test.nombre}"/>')"
-               class="HipervinculoAdmon">
-                          <fmt:message key="formaListadoTest.etiqueta.eliminar" />
-                      </a>
-                  </div>
+                  <div class="td" align="left" style="width:20%"><c:out value="${test.nombre}"/></div>
               </div>
           </c:forEach>
           <div class="tr">
