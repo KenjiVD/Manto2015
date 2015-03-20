@@ -18,8 +18,8 @@
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bdscec?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8</property>
-        <property name="hibernate.connection.username">emanuel</property>
-        <property name="hibernate.connection.password">1234</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
 		<!-- JDBC connection pool (use the built-in) -->
 		<property name="hibernate.connection.pool_size">1</property>
 	
@@ -53,6 +53,8 @@
         <mapping resource="edu/uag/iidis/scec/modelo/Login.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Persona.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Test.hbm.xml"/>
+        <mapping resource="edu/uag/iidis/scec/modelo/Seccion.hbm.xml"/>
+        
 
         
     </session-factory>

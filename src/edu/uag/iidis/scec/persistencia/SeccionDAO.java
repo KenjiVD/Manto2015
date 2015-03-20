@@ -175,25 +175,25 @@ public class SeccionDAO {
         }
     }
 
-    public Collection buscarPorTest(int nombreSeccion)
+    public Collection buscarPorTest(Long idp)
             throws ExcepcionInfraestructura {
-
+               
         Collection secciones;
 
 
         try {
             
-            String hql = "from Seccion where idTest LIKE :nombre";
+            String hql = "from Seccion where idTest = :id";
             
              if (log.isDebugEnabled()) {
-                 log.debug(hql + nombreSeccion);
+                 log.debug(hql + idp);
             }
         
             Query query = HibernateUtil.getSession()
                                         .createQuery(hql);
             
 
-            query.setParameter("nombre", "%"+nombreSeccion+"%");
+            query.setParameter("id", idp);
 
             
             if (log.isDebugEnabled()) {
@@ -207,6 +207,7 @@ public class SeccionDAO {
         } catch (HibernateException ex) {
             if (log.isWarnEnabled()) {
                 log.warn("<HibernateException *******************");
+                ex.printStackTrace();
             }
             throw new ExcepcionInfraestructura(ex);
         }

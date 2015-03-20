@@ -96,9 +96,9 @@ public final class MCUListarSecciones
         FormaListadoSeccionesOpcion forma = (FormaListadoSeccionesOpcion)form;
 
         ManejadorSecciones mr = new ManejadorSecciones();
-        if (log.isDebugEnabled()) {
-            log.debug(">var1: "+forma.getValor());
-        }
+       /* if (log.isDebugEnabled()) {
+            log.debug(">var1: ");
+        }*/
         Collection resultado = mr.buscarSeccionesTest(forma.getValor());
 
         ActionMessages errores = new ActionMessages();

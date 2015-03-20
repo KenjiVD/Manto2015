@@ -19,7 +19,7 @@ public final class FormaListadoSeccionesOpcion
 
     private Collection seccion;
     private int contador;
-    private int valor;
+    private Long valor;
 
 
     public void setSeccion(Collection seccion) {
@@ -38,18 +38,18 @@ public final class FormaListadoSeccionesOpcion
         return (this.contador);
     }
 
-    public int getValor() {
+    public Long getValor() {
         return (this.valor);
     }
 
-    public int setValor(int valor) {
-        return this.valor = valor;
+    public void setValor(Long valor) {
+         this.valor = valor;
     }
 
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {
         contador=0;
-        valor = 0;
+        valor = null;
         seccion=null;
     }
 

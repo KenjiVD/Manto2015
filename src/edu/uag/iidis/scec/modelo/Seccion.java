@@ -37,11 +37,11 @@ public class Seccion extends ClaseBase
      * Regresa el id del rol.
      * @return Long
      */
-    public Long getIdSeccion() {
+    public Long getId() {
         return this.idSeccion;
     }
 
-    public void setIdSeccion(Long id) {
+    public void setId(Long id) {
         this.idSeccion = id;
     }
 

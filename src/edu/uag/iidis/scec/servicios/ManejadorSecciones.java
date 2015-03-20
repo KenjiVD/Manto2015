@@ -59,7 +59,7 @@ public class ManejadorSecciones {
         }
     }
 
-    public Collection buscarSeccionesTest(int seccionBuscar) {
+    public Collection buscarSeccionesTest(Long seccionBuscar) {
         Collection resultado;
 
         if (log.isDebugEnabled()) {

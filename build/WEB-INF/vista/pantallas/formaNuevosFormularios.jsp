@@ -28,7 +28,7 @@
 			<form action="NuevaPregunta.do" method="post">
 			<h1>Nueva Pregunta</h1>
 			<select id="seleccionar" name="selecttest" onchange="listaSecciones()">
-				<option>Eliegir Test</option>
+				<option>Elegir Test</option>
 				<c:forEach var="test" items="${formaNuevosFormularios.test}">
                 	<option value="<c:out value='${test.id}'/>"><c:out value="${test.nombre}"/></option>
           		</c:forEach>

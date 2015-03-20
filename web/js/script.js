@@ -96,7 +96,8 @@ $(document).on("ready",function(){
  //	 funcion de lista secciones
  function listaSecciones(){
  		var e = document.getElementById("seleccionar");
- 		var valor = e.options[e.selectedIndex].value;
+ 		//var valor = e.options[e.selectedIndex].value;
+ 		var valor=e.selectedIndex;
 		$.post("http://localhost:8080/ESY/procesarListadoSeccion.do", { valor: valor})
 		.done(function(data) {
 		  	$('#seleccionaropcion').html(data);
