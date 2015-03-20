@@ -23,8 +23,8 @@
         <form-bean name="formaMenuTest"
                    type="edu.uag.iidis.scec.vista.FormaMenuTest">
         </form-bean>
-        <form-bean name="formaNuevosFormulario"
-                   type="edu.uag.iidis.scec.vista.formaNuevosFormulario">
+        <form-bean name="formaNuevosFormularios"
+                   type="edu.uag.iidis.scec.vista.FormaNuevosFormularios">
         </form-bean>
         <form-bean name="formaListadoSeccion"
                    type="edu.uag.iidis.scec.vista.formaListadoSeccion">
