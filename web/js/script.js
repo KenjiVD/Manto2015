@@ -93,6 +93,18 @@ $(document).on("ready",function(){
 	  	});
 	});*/
 });
+ //	 funcion de lista secciones
+ function listaSecciones(){
+ 		var e = document.getElementById("seleccionar");
+ 		var test = e.options[e.selectedIndex].value;
+		$.post("http://localhost:8080/ESY/procesarListadoSeccion.do", { idTest: test)})
+		.done(function(data) {
+		  	$('#tablecontent').html(data);
+		})
+		.fail(function(e) {
+		    console.log(e);
+	  	});
+	}
  //  funciones para ordenar
 
  	//****ordenar por nombre***//
