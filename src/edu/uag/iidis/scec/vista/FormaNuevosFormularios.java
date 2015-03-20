@@ -17,47 +17,31 @@ import org.apache.struts.validator.ValidatorForm;
 public final class FormaNuevosFormularios
         extends ValidatorForm {
 
-    private Collection ciudades;
-    private Collection estados;
+    private Collection test;
     private int contador;
-    private String ciudadBuscar;
 
-    public void setCiudades(Collection ciudades) {
-        this.ciudades = ciudades;
-        if (ciudades != null) {
-          this.contador = ciudades.size();
+
+    public void setTest(Collection test) {
+        this.test = test;
+        if (test != null) {
+          this.contador = test.size();
         } else
           this.contador = -1;
     }
 
-    public Collection getCiudades() {
-        return (this.ciudades);
+    public Collection getTest() {
+        return (this.test);
     }
-
-    public void setEstados(Collection estados) {
-        this.estados = estados;
-        if (estados != null) {
-          this.contador = estados.size();
-        } else
-          this.contador = -1;
-    }
-
-    public Collection getEstados() {
-        return (this.estados);
-    }
-
-    public void setciudadBuscar(String ciudadBuscar) {
-        this.ciudadBuscar = ciudadBuscar;
-    }
-
-    public String getciudadBuscar() {
-        return (this.ciudadBuscar);
+  
+    public int getContador() {
+        return (this.contador);
     }
 
 
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {
-        ciudadBuscar=null;
+        contador=0;
+        test=null;
     }
 
 

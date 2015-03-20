@@ -93,12 +93,6 @@
     <action-mappings>
         <action path="/irInicio"
                 forward="/WEB-INF/vista/pantallas/pantallaInicio.jsp" />
-        <action path="/irMenu"
-                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaMenuTest.jsp" />
-        <action path="/irNuevos"
-                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevosFormulario.jsp" />
-        <action path="/irListado"
-                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoTest.jsp" />
         <action path="/irListadoSeccion"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoSeccion.jsp" />
         <action path="/irBienvenida"
@@ -123,9 +117,17 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoTest.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
-
-
-
+        <action path="/irMenu"
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaMenuTest.jsp" />
+        <action path="/irNuevos"
+                type="edu.uag.iidis.scec.control.MCUListarTest"
+                parameter="solicitarListarTestOpcion"
+                name="formaNuevosFormularios"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevosFormularios.jsp" />
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
 
         <!--Test-->
         

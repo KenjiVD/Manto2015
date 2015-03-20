@@ -15,8 +15,8 @@
 			<form action="NuevaSeccion.do" method="post">
 			<h1>Nueva Sección</h1>
 			<select name="selecttest">
-				<c:forEach var="test" items="${formaListadoTest.test}">
-                	<option value="<c:out value='${test.idTest}'/>"><c:out value="${test.nombre}"/></option>
+				<c:forEach var="test" items="${formaNuevosFormularios.test}">
+                	<option value='<c:out value="${test.id}"/>'><c:out value="${test.nombre}"/></option>
           		</c:forEach>
 			</select>
 			<br><br>
@@ -28,8 +28,8 @@
 			<form action="NuevaPregunta.do" method="post">
 			<h1>Nueva Pregunta</h1>
 			<select name="selecttest">
-				<c:forEach var="test" items="${formaListadoTest.test}">
-                	<option value="<c:out value='${test.idTest}'/>"><c:out value="${test.nombre}"/></option>
+				<c:forEach var="test" items="${formaNuevosFormularios.test}">
+                	<option value="<c:out value='${test.id}'/>"><c:out value="${test.nombre}"/></option>
           		</c:forEach>
 			</select>
 			<br><br>
