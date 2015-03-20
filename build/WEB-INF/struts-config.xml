@@ -29,6 +29,9 @@
         <form-bean name="formaListadoSeccion"
                    type="edu.uag.iidis.scec.vista.formaListadoSeccion">
         </form-bean>
+        <form-bean name="formaListadoSeccionesOpcion"
+                   type="edu.uag.iidis.scec.vista.FormaListadoSeccionesOpcion">
+        </form-bean>
         <form-bean name="formaListadoTest"
                    type="edu.uag.iidis.scec.vista.FormaListadoTest">
         </form-bean>
@@ -128,7 +131,15 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevosFormularios.jsp" />
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
-
+        <action path="/procesarListadoSeccion"
+                type="edu.uag.iidis.scec.control.MCUListarSecciones"
+                parameter="solicitarListarSeccionesOpcion"
+                name="formaListadoSeccionesOpcion"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/formaListadoSeccionesOpcion.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
         <!--Test-->
         
         

@@ -175,6 +175,43 @@ public class SeccionDAO {
         }
     }
 
+    public Collection buscarPorTest(int nombreSeccion)
+            throws ExcepcionInfraestructura {
+
+        Collection secciones;
+
+
+        try {
+            
+            String hql = "from Seccion where idTest LIKE :nombre";
+            
+             if (log.isDebugEnabled()) {
+                 log.debug(hql + nombreSeccion);
+            }
+        
+            Query query = HibernateUtil.getSession()
+                                        .createQuery(hql);
+            
+
+            query.setParameter("nombre", "%"+nombreSeccion+"%");
+
+            
+            if (log.isDebugEnabled()) {
+                 log.debug("  ***query:   "+hql );
+            }
+
+            secciones = query.list();
+
+            return secciones;
+
+        } catch (HibernateException ex) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException *******************");
+            }
+            throw new ExcepcionInfraestructura(ex);
+        }
+    }
+
     public boolean existeSeccion(String nombreSeccion)
             throws ExcepcionInfraestructura {
 

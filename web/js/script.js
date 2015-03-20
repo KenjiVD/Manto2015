@@ -96,10 +96,10 @@ $(document).on("ready",function(){
  //	 funcion de lista secciones
  function listaSecciones(){
  		var e = document.getElementById("seleccionar");
- 		var test = e.options[e.selectedIndex].value;
-		$.post("http://localhost:8080/ESY/procesarListadoSeccion.do", { idTest: test)})
+ 		var valor = e.options[e.selectedIndex].value;
+		$.post("http://localhost:8080/ESY/procesarListadoSeccion.do", { valor: valor})
 		.done(function(data) {
-		  	$('#tablecontent').html(data);
+		  	$('#seleccionaropcion').html(data);
 		})
 		.fail(function(e) {
 		    console.log(e);

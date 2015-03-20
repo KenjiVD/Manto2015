@@ -34,7 +34,7 @@
           		</c:forEach>
 			</select>
 			<br><br>
-			<select name="selectsec">
+			<select id="seleccionaropcion" name="selectsec">
 				<option></option>
 			</select>
 			<br><br>

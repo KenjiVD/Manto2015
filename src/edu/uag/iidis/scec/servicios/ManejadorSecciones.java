@@ -59,6 +59,26 @@ public class ManejadorSecciones {
         }
     }
 
+    public Collection buscarSeccionesTest(int seccionBuscar) {
+        Collection resultado;
+
+        if (log.isDebugEnabled()) {
+            log.debug(">***Buscar Seccion:"+seccionBuscar);
+        }
+
+        try {
+            HibernateUtil.beginTransaction();
+            resultado = dao.buscarPorTest(seccionBuscar);
+            HibernateUtil.commitTransaction();
+            return resultado;         
+        } catch (ExcepcionInfraestructura e) {
+            HibernateUtil.rollbackTransaction();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
+
     public void eliminarSeccion(Long id) {
         if (log.isDebugEnabled()) {
             log.debug(">eliminarSeccion(Seccion)");

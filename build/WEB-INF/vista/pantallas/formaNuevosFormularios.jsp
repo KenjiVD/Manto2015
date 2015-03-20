@@ -27,18 +27,15 @@
 		<div id="pregunta">
 			<form action="NuevaPregunta.do" method="post">
 			<h1>Nueva Pregunta</h1>
-			<select name="selecttest">
+			<select id="seleccionar" name="selecttest" onchange="listaSecciones()">
+				<option>Eliegir Test</option>
 				<c:forEach var="test" items="${formaNuevosFormularios.test}">
                 	<option value="<c:out value='${test.id}'/>"><c:out value="${test.nombre}"/></option>
           		</c:forEach>
 			</select>
 			<br><br>
-			<select name="selectsec">
-				<option>Sección 1</option>
-				<option>Sección 1</option>
-				<option>Sección 1</option>
-				<option>Sección 1</option>
-				<option>Sección 1</option>
+			<select id="seleccionaropcion" name="selectsec">
+				<option></option>
 			</select>
 			<br><br>
 			<input type="text" name="nombrepregunta" class="pregunta" placeholder="Pregunta"><br><br>
