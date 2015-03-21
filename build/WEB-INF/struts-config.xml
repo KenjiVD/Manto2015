@@ -23,6 +23,9 @@
         <form-bean name="formaMenuTest"
                    type="edu.uag.iidis.scec.vista.FormaMenuTest">
         </form-bean>
+         <form-bean name="formaNuevoTest"
+                   type="edu.uag.iidis.scec.vista.FormaNuevoTest">
+        </form-bean>
         <form-bean name="formaNuevosFormularios"
                    type="edu.uag.iidis.scec.vista.FormaNuevosFormularios">
         </form-bean>
@@ -140,6 +143,18 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/formaListadoSeccionesOpcion.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
+
+           <action path="/procesarRegistroTest"
+                type="edu.uag.iidis.scec.control.MCURegistrarTest"
+                parameter="procesarRegistroTest"
+                name="formaNuevoTest"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevosFormularios.jsp" >
+            <forward name="cancelar" path="/irNuevos.do" redirect="true"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="volver" path="irNuevos.do" redirect="true"/>
+       </action>
         <!--Test-->
         
         

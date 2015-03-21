@@ -64,6 +64,14 @@ public final class MCURegistrarTest
         // Se obtienen los datos para procesar el registro
         FormaNuevoTest forma = (FormaNuevoTest)form;
 
+        if(forma.getNombre()==null){
+            if (log.isDebugEnabled()) {
+                log.debug("El nombre es nulo*****");
+            }
+
+        }else{log.debug("El nombre es"+forma.getNombre());}
+
+
         Test test = new Test(forma.getNombre());
 
         ManejadorTest mr = new ManejadorTest();

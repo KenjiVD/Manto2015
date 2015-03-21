@@ -20,7 +20,6 @@ public final class FormaNuevosFormularios
     private Collection test;
     private int contador;
 
-
     public void setTest(Collection test) {
         this.test = test;
         if (test != null) {
