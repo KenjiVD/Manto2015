@@ -5,45 +5,12 @@
 
 
     <br>
-    <font size='5'><fmt:message key="formaNuevoTest.titulo" /></font>
+    
 
-    <form id="forma" action="procesarRegistroTest.do" method="post">
-        <div class="table">
-            <div class="tr">
-                <div class="td" colspan="2">
-                   <html:errors />
-                </div>
-            </div>
-            <div class="tr">
-                <div class="td" align="right">
-                    <fmt:message key="formaNuevoTest.etiqueta.nombre" />
-                </div>
-                <div class="td" align="left">
-                    <input type="text" 
-                           name="nombre" 
-                           size="50" 
-                           maxlength="100" 
-                           value="${formaNuevoTest.nombre}" />
-                </div>
-            </div>
-            
-            <div class="tr">
-                <div class="td"  style="width:400px;" align="center">
-                    <input type="submit" 
-                           name="submit"
-                           value="Agregar y terminar"/>
-                    <input type="submit" 
-                           name="submit"
-                           value="Agregar y volver"
-                           onclick="forma.action='procesarRegistroTest.do?volver=si'"/>
-                    <input type="button"
-                           value="Reset"
-                           onclick="location.href='solicitarRegistroTest.do'" />
-                    <input type="submit" 
-                           name="org.apache.struts.taglib.html.CANCEL" 
-                           value="cancelar" 
-                           onclick="bCancel=true;">    
-                </div>
-            </div>
-        </div>
-    </form>
+    <div id="test">
+      <form action="procesarRegistroTest.do" method="post">
+      <h1>Nuevo Test</h1>
+      <input type="text" name="nombretest" placeholder="Nombre Test" value="${formaNuevoTest.nombre}"/><br><br>
+      <input type="submit" value="Nuevo Test" class="envio" /><br><br>
+      </form>
+    </div>

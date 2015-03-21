@@ -23,8 +23,17 @@
         <form-bean name="formaMenuTest"
                    type="edu.uag.iidis.scec.vista.FormaMenuTest">
         </form-bean>
+        <form-bean name="formaAdminTest"
+                   type="edu.uag.iidis.scec.vista.FormaAdminTest">
+        </form-bean>
          <form-bean name="formaNuevoTest"
                    type="edu.uag.iidis.scec.vista.FormaNuevoTest">
+        </form-bean>
+        <form-bean name="formaNuevaSeccion"
+                   type="edu.uag.iidis.scec.vista.FormaNuevaSeccion">
+        </form-bean>
+        <form-bean name="formaNuevaPregunta"
+                   type="edu.uag.iidis.scec.vista.FormaNuevaPregunta">
         </form-bean>
         <form-bean name="formaNuevosFormularios"
                    type="edu.uag.iidis.scec.vista.FormaNuevosFormularios">
@@ -125,15 +134,9 @@
         </action>
         <action path="/irMenu"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaMenuTest.jsp" />
+
         <action path="/irNuevos"
-                type="edu.uag.iidis.scec.control.MCUListarTest"
-                parameter="solicitarListarTestOpcion"
-                name="formaNuevosFormularios"
-                scope="request"
-                validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevosFormularios.jsp" />
-            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
-        </action>
+             forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaAdminTest.jsp" />
         <action path="/procesarListadoSeccion"
                 type="edu.uag.iidis.scec.control.MCUListarSecciones"
                 parameter="solicitarListarSeccionesOpcion"
@@ -144,13 +147,72 @@
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
 
-           <action path="/procesarRegistroTest"
+          <action path="/solicitarRegistroTest"
+                type="edu.uag.iidis.scec.control.MCURegistrarTest"
+                parameter="solicitarRegistroTest"
+                name="formaNuevoTest"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoTest.jsp"/>
+        </action>
+        <action path="/procesarRegistroTest"
                 type="edu.uag.iidis.scec.control.MCURegistrarTest"
                 parameter="procesarRegistroTest"
                 name="formaNuevoTest"
                 scope="request"
                 validate="true"
-                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevosFormularios.jsp" >
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoTest.jsp" >
+            <forward name="cancelar" path="/irNuevos.do" redirect="true"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="volver" path="irNuevos.do" redirect="true"/>
+       </action>
+
+         <action path="/solicitarRegistroSeccion"
+                type="edu.uag.iidis.scec.control.MCURegistrarSeccion"
+                parameter="solicitarRegistroSeccion"
+                name="formaNuevaSeccion"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaSeccion.jsp"/>
+        </action>
+        <action path="/procesarRegistroSeccion"
+                type="edu.uag.iidis.scec.control.MCURegistrarSeccion"
+                parameter="procesarRegistroSeccion"
+                name="formaNuevaSeccion"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaSeccion.jsp" >
+            <forward name="cancelar" path="/irNuevos.do" redirect="true"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="volver" path="irNuevos.do" redirect="true"/>
+       </action>
+
+
+       <action path="/solicitarListarPregunta"
+                type="edu.uag.iidis.scec.control.MCUListarPregunta"
+                parameter="solicitarListarPregunta"
+                name="formaListadoPregunta"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoPregunta.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+        <action path="/solicitarRegistroPregunta"
+                type="edu.uag.iidis.scec.control.MCURegistrarPregunta"
+                parameter="solicitarRegistroPregunta"
+                name="formaNuevaPregunta"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPregunta.jsp"/>
+        </action>
+
+        <action path="/procesarRegistroPregunta"
+                type="edu.uag.iidis.scec.control.MCURegistrarPregunta"
+                parameter="procesarRegistroPregunta"
+                name="formaNuevaPregunta"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPregunta.jsp" >
             <forward name="cancelar" path="/irNuevos.do" redirect="true"/>
             <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
             <forward name="volver" path="irNuevos.do" redirect="true"/>
