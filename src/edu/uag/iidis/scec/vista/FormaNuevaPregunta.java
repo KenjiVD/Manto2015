@@ -18,6 +18,7 @@ public final class FormaNuevaPregunta
         extends ValidatorForm {
 
     private Collection secciones;
+    private Collection test;
     private int contador;
     private String pregunta;
     private Long idSeccion;
@@ -25,7 +26,19 @@ public final class FormaNuevaPregunta
     private String respuesta1;
     private String respuesta2;
 
-    public void setSeccion(Collection secciones) {
+    public void setTest(Collection test) {
+        this.test = test;
+        if (test != null) {
+          this.contador = test.size();
+        } else
+          this.contador = -1;
+    }
+
+    public Collection getTest() {
+        return (this.test);
+    }
+
+      public void setSecciones(Collection secciones) {
         this.secciones = secciones;
         if (secciones != null) {
           this.contador = secciones.size();
@@ -33,9 +46,10 @@ public final class FormaNuevaPregunta
           this.contador = -1;
     }
 
-    public Collection getSeccion() {
+    public Collection getSecciones() {
         return (this.secciones);
     }
+
 
     public void setPregunta(String pregunta) {
         this.pregunta = pregunta;

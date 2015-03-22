@@ -10,7 +10,7 @@
     <div id="test">
       <form action="procesarRegistroTest.do" method="post">
       <h1>Nuevo Test</h1>
-      <input type="text" name="nombretest" placeholder="Nombre Test" value="${formaNuevoTest.nombre}"/><br><br>
+      <input type="text" name="nombre" placeholder="Nombre Test" value="${formaNuevoTest.nombre}"/><br><br>
       <input type="submit" value="Nuevo Test" class="envio" /><br><br>
       </form>
     </div>

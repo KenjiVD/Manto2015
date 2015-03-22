@@ -35,11 +35,13 @@ public final class MCURegistrarPregunta
 
         FormaNuevaPregunta forma = (FormaNuevaPregunta)form;
 
-        ManejadorSecciones mr = new ManejadorSecciones();
-        Collection resultado = mr.listarSecciones();
+        //ManejadorSecciones mr = new ManejadorSecciones();
+       // Collection resultado = mr.listarSecciones();
+        ManejadorTest mr2 = new ManejadorTest();
+        Collection resultado2 = mr2.listarTest();
 
-        forma.setSeccion( resultado );
-
+       // forma.setSeccion( resultado );
+        forma.setTest(resultado2);
         if (log.isDebugEnabled()) {
             log.debug(">solicitarRegistroPregunta");
         }

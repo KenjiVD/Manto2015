@@ -96,7 +96,9 @@ public final class MCURegistrarSeccion
         FormaNuevaSeccion forma = (FormaNuevaSeccion)form;
 
         Seccion seccion = new Seccion(forma.getidTest(), forma.getNombre());
-
+        if(forma.getidTest()==null||forma.getNombre()==null){
+            log.debug("*****parametros nulos*****");
+        }else{log.debug("*****Parametros: "+forma.getidTest()+"  "+forma.getNombre()+"*****");}
         ManejadorSecciones mr = new ManejadorSecciones();
         int resultado = mr.crearSeccion(seccion);
 

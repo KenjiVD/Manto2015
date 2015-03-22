@@ -146,7 +146,7 @@ public class SeccionDAO {
 
         try {
             
-            String hql = "from Seccion where nombre LIKE :nombre";
+            String hql = "select nombre from Test where nombre = :nombre";
             
              if (log.isDebugEnabled()) {
                  log.debug(hql + nombreSeccion);
@@ -156,7 +156,7 @@ public class SeccionDAO {
                                         .createQuery(hql);
             
 
-            query.setParameter("nombre", "%"+nombreSeccion+"%");
+            query.setParameter("nombre", nombreSeccion);
 
             
             if (log.isDebugEnabled()) {

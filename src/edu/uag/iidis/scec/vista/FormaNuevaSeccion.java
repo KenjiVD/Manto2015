@@ -23,7 +23,7 @@ public final class FormaNuevaSeccion
     private Long idTest;
 
 
-    public void setTest(Collection Test) {
+    public void setTest(Collection test) {
         this.test = test;
         if (test != null) {
           this.contador = test.size();

@@ -7,13 +7,13 @@
     <div id="seccion">
       <form action="procesarRegistroSeccion.do" method="post">
       <h1>Nueva Sección</h1>
-      <select name="selecttest">
+      <select name="idTest" value="formaNuevaSeccion.idTest">
         <c:forEach var="test" items="${formaNuevaSeccion.test}">
-                  <option value='<c:out value="${test.id}"/>'><c:out value="${test.nombre}"/></option>
+            <option value='<c:out value="${test.id}"/>'><c:out value="${test.nombre}"/></option>
         </c:forEach>
       </select>
       <br><br>
-      <input type="text" name="nombreseccion" placeholder="Nombre Sección"><br><br>
-      <input type"submit" value="Agregar Sección" class="envio" /><br><br>
+      <input type="text" name="nombre" placeholder="Nombre Sección" value="${formaNuevaSeccion.nombre}"/><br><br>
+      <input type="submit" value="Agregar Sección" class="envio" /><br><br>
       </form>
     </div>
