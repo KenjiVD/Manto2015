@@ -183,7 +183,7 @@ public class TestDAO {
         }
     }
 
-    public Collection generarTest(Long idp)
+    public Collection generarTest(Long idt)
             throws ExcepcionInfraestructura {
                
         Collection test;
@@ -191,17 +191,17 @@ public class TestDAO {
 
         try {
             
-            String hql = "select Pregunta.id as idp, Respuesta.id as idr, Respuesta.respuesta as respuesta, Pregunta.pregunta as pregunta from Pregunta left join Respuesta on Respuesta.idPregunta = Pregunta.idPregunta left join Seccion on Seccion.idSeccion = Pregunta.idSeccion where Seccion.idTest = :id order by Pregunta.idSeccion, Pregunta.idPregunta";
+            String hql = "from Testgenerado where idt = :id";
             
              if (log.isDebugEnabled()) {
-                 log.debug(hql  + idp);
+                 log.debug(hql  + idt);
             }
         
             Query query = HibernateUtil.getSession()
                                         .createQuery(hql);
             
 
-            query.setParameter("id", idp);
+            query.setParameter("id", idt);
 
             
             if (log.isDebugEnabled()) {

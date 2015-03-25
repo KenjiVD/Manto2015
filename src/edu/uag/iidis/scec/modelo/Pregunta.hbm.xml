@@ -25,17 +25,6 @@
         <property name="pregunta"
             type="java.lang.String"
             not-null="true" />
-
-        <!--<bag name="Respuesta"
-             lazy="false"
-             table="respuesta"
-             inverse="true"
-             cascade="save-update">
-
-             <key column="idPregunta" />
-
-             <one-to-many class="edu.uag.iidis.scec.modelo.Respuesta"/>
-        </bag>-->
             
     </class>
 

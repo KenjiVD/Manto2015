@@ -251,6 +251,22 @@ INSERT INTO `test` VALUES (1,'Prueba1'),(2,'Prueba2');
 UNLOCK TABLES;
 
 --
+-- Temporary view structure for view `testgenerado`
+--
+
+DROP TABLE IF EXISTS `testgenerado`;
+/*!50001 DROP VIEW IF EXISTS `testgenerado`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `testgenerado` AS SELECT 
+ 1 AS `idt`,
+ 1 AS `idp`,
+ 1 AS `idr`,
+ 1 AS `respuesta`,
+ 1 AS `pregunta`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `usuariorol`
 --
 
@@ -302,6 +318,24 @@ LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Final view structure for view `testgenerado`
+--
+
+/*!50001 DROP VIEW IF EXISTS `testgenerado`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `testgenerado` AS select `seccion`.`idTest` AS `idt`,`pregunta`.`idPregunta` AS `idp`,`respuesta`.`idRespuesta` AS `idr`,`respuesta`.`respuesta` AS `respuesta`,`pregunta`.`pregunta` AS `pregunta` from ((`pregunta` left join `respuesta` on((`respuesta`.`idPregunta` = `pregunta`.`idPregunta`))) left join `seccion` on((`seccion`.`idSeccion` = `pregunta`.`idSeccion`))) order by `pregunta`.`idSeccion`,`pregunta`.`idPregunta` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -312,4 +346,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-13 21:45:47
+-- Dump completed on 2015-03-25 14:07:47

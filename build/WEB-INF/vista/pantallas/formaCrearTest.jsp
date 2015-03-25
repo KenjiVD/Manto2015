@@ -52,7 +52,7 @@
                   <div class="td" align="left" style="width:20%"><c:out value="${test.respuesta}"/></div>
             <%
             contar++;
-            if (contar == 2) { %>
+            if (contar == 3) { %>
               </div>
             <% contar = 0;
             } %>
