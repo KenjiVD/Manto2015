@@ -18,7 +18,7 @@ public class Pregunta extends ClaseBase
 
     private Long id;
     private Long idSeccion;
-    private Long posicion;
+   // private Long posicion;
     private Long idRespuestaCorrecta;
     private String pregunta;
     private String repuesta1;
@@ -77,10 +77,10 @@ public class Pregunta extends ClaseBase
      * Regresa la descripción del rol.
      * @return String
      */
-    public Long getRespuestaCorrecta() {
+    public Long getIdRespuestaCorrecta() {
         return this.idRespuestaCorrecta;
     }
-    public void setRespuestaCorrecta(Long id) {
+    public void setIdRespuestaCorrecta(Long id) {
         this.idRespuestaCorrecta = id;
     }
 

@@ -17,9 +17,6 @@
             type="java.lang.Long"
             not-null="true" />
         
-        <property name="posicion"
-            type="java.lang.Long"
-            not-null="true" />
 
         <property name="idRespuestaCorrecta"
             type="java.lang.Long"
