@@ -183,5 +183,42 @@ public class TestDAO {
         }
     }
 
+    public Collection generarTest(Long idp)
+            throws ExcepcionInfraestructura {
+               
+        Collection test;
+
+
+        try {
+            
+            String hql = "select Pregunta.id as idp, Respuesta.id as idr, Respuesta.respuesta as respuesta, Pregunta.pregunta as pregunta from Pregunta left join Respuesta on Respuesta.idPregunta = Pregunta.idPregunta left join Seccion on Seccion.idSeccion = Pregunta.idSeccion where Seccion.idTest = :id order by Pregunta.idSeccion, Pregunta.idPregunta";
+            
+             if (log.isDebugEnabled()) {
+                 log.debug(hql  + idp);
+            }
+        
+            Query query = HibernateUtil.getSession()
+                                        .createQuery(hql);
+            
+
+            query.setParameter("id", idp);
+
+            
+            if (log.isDebugEnabled()) {
+                 log.debug("  ***query:   "+hql );
+            }
+
+            test = query.list();
+
+            return test;
+
+        } catch (HibernateException ex) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException *******************");
+                ex.printStackTrace();
+            }
+            throw new ExcepcionInfraestructura(ex);
+        }
+    }
 
 }

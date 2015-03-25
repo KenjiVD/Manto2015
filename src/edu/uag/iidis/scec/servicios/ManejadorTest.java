@@ -18,6 +18,25 @@ public class ManejadorTest {
         dao = new TestDAO();
     }
 
+    public Collection generarTest(Long id) {
+        Collection resultado;
+
+        if (log.isDebugEnabled()) {
+            log.debug(">guardarUsuario(usuario)");
+        }
+
+        try {
+            HibernateUtil.beginTransaction();
+            resultado = dao.generarTest(id);
+            HibernateUtil.commitTransaction();
+            return resultado;         
+        } catch (ExcepcionInfraestructura e) {
+            HibernateUtil.rollbackTransaction();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
 
     public Collection listarTest() {
         Collection resultado;

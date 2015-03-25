@@ -16,7 +16,7 @@ import java.util.*;
 public class Pregunta extends ClaseBase 
         implements Serializable {
 
-    private Long idPregunta;
+    private Long id;
     private Long idSeccion;
     private Long posicion;
     private Long idRespuestaCorrecta;
@@ -29,7 +29,7 @@ public class Pregunta extends ClaseBase
     }
 
     public Pregunta(Long id){
-        this.idPregunta = id;
+        this.id = id;
     }
 
     public Pregunta(Long idSeccion,String respuestac,String pregunta){
@@ -45,12 +45,12 @@ public class Pregunta extends ClaseBase
      * Regresa el id del rol.
      * @return Long
      */
-    public Long getIdPregunta() {
-        return this.idPregunta;
+    public Long getId() {
+        return this.id;
     }
 
-    public void setIdPregunta(Long id) {
-        this.idPregunta = id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     // ID Ciudad

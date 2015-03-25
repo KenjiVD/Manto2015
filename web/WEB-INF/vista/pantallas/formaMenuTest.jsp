@@ -20,6 +20,5 @@
         <div id="menu">
             <a href="irNuevos.do"><p><fmt:message key="formaMenuTest.etiqueta.nuevotest" /></p></a>
             <a href="solicitarListarTest.do"><p><fmt:message key="formaMenuTest.etiqueta.listatest" /></p></a>
-            <a href="NuevoTest.do"><p><fmt:message key="formaMenuTest.etiqueta.realizartest" /></p></a>
         </div>
     </div>
