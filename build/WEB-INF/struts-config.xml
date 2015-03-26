@@ -38,6 +38,9 @@
         <form-bean name="formaNuevaPregunta"
                    type="edu.uag.iidis.scec.vista.FormaNuevaPregunta">
         </form-bean>
+        <form-bean name="formaNuevaRespuesta"
+                   type="edu.uag.iidis.scec.vista.FormaNuevaRespuesta">
+        </form-bean>
         <form-bean name="formaNuevosFormularios"
                    type="edu.uag.iidis.scec.vista.FormaNuevosFormularios">
         </form-bean>
@@ -227,6 +230,27 @@
                 scope="request"
                 validate="true"
                 input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPregunta.jsp" >
+            <forward name="cancelar" path="/irNuevos.do" redirect="true"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="volver" path="irNuevos.do" redirect="true"/>
+       </action>
+
+       <action path="/solicitarRegistroRespuesta"
+                type="edu.uag.iidis.scec.control.MCURegistrarRespuesta"
+                parameter="solicitarRegistroRespuesta"
+                name="formaNuevaRespuesta"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaRespuesta.jsp"/>
+        </action>
+
+        <action path="/procesarRegistroRespuesta"
+                type="edu.uag.iidis.scec.control.MCURegistrarRespuesta"
+                parameter="procesarRegistroRespuesta"
+                name="formaNuevaRespuesta"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaRespuesta.jsp" >
             <forward name="cancelar" path="/irNuevos.do" redirect="true"/>
             <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
             <forward name="volver" path="irNuevos.do" redirect="true"/>

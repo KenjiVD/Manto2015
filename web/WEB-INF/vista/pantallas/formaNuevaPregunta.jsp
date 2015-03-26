@@ -5,7 +5,7 @@
 
 
     <div id="pregunta">
-      <form action="NuevaPregunta.do" method="post">
+      <form action="ProcesarRegistroPregunta.do" method="post">
       <h1>Nueva Pregunta</h1>
       <select id="seleccionar" name="selecttest" onchange="listaSecciones()">
         <option>Elegir Test</option>
@@ -18,18 +18,7 @@
         <option></option>
       </select>
       <br><br>
-      <input type="text" name="nombrepregunta" class="pregunta" placeholder="Pregunta"><br><br>
-      <div id="cratepregunta">
-        <input type="text" name="respuestauno" placeholder="Respuesta 1">
-        <input name="rescor" type="radio">
-        <br><br>
-        <input type="text" name="respuestados" placeholder="Respuesta 2">
-        <input name="rescor" type="radio">
-        <br><br>
-        <input type="text" name="respuestatres" placeholder="Respuesta 3">
-        <input name="rescor" type="radio">
-        <br><br>
-      </div>
+      <input type="text" name="pregunta" class="pregunta" placeholder="Pregunta"><br><br>
       <input type"submit" value="Nueva Pregunta" class="envio" /><br><br>
       </form>
     </div>

@@ -23,8 +23,6 @@ public final class FormaNuevaPregunta
     private String pregunta;
     private Long idSeccion;
     private String  respuestaCorrecta;
-    private String respuesta1;
-    private String respuesta2;
 
     public void setTest(Collection test) {
         this.test = test;
@@ -68,21 +66,6 @@ public final class FormaNuevaPregunta
         return (this.respuestaCorrecta);
     }
 
-    public void setRespuesta1(String respuesta1) {
-        this.respuesta1 = respuesta1;
-    }
-
-    public String getRespuesta1() {
-        return (this.respuesta1);
-    }
-
-    public void setRespuesta2(String respuesta2) {
-        this.respuesta2 = respuesta2;
-    }
-
-    public String getRespuesta2() {
-        return (this.respuesta2);
-    }
 
     public void setidSeccion(Long id) {
         this.idSeccion = id;
@@ -96,8 +79,6 @@ public final class FormaNuevaPregunta
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {
         pregunta=null;
-        respuesta1=null;
-        respuesta2=null;
         respuestaCorrecta=null;
         idSeccion=null;
     }

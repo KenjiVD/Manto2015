@@ -27,8 +27,8 @@ public class Respuesta extends ClaseBase
         this.id = id;
     }
 
-    public Respuesta(Long idRespuesta, Long idPregunta,String respuesta){
-        this.id=idRespuesta;
+    public Respuesta( Long idPregunta,String respuesta){
+     //   this.id=idRespuesta;
         this.idPregunta=idPregunta;
         this.respuesta=respuesta;
     }
