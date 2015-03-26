@@ -7,7 +7,7 @@
     <div id="pregunta">
       <form action="ProcesarResgistroRespuesta.do" method="post">
       <h1>Nueva Respuesta</h1>
-      <select id="seleccionar" name="idPregunta" onchange="">
+      <select id="seleccionar" name="idPregunta" value="formaNuevaRespuesta.idPregunta">
         <option>Elegir Pregunta</option>
         <c:forEach var="pregunta" items="${formaNuevaRespuesta.preguntas}">
             <option value='<c:out value="${pregunta.id}"/>'><c:out value="${pregunta.pregunta}"/></option>

@@ -5,20 +5,20 @@
 
 
     <div id="pregunta">
-      <form action="ProcesarRegistroPregunta.do" method="post">
+      <form action="procesarRegistroPregunta.do" method="post">
       <h1>Nueva Pregunta</h1>
-      <select id="seleccionar" name="selecttest" onchange="listaSecciones()">
+      <select id="seleccionar" name="id" onchange="listaSecciones()">
         <option>Elegir Test</option>
         <c:forEach var="test" items="${formaNuevaPregunta.test}">
             <option value='<c:out value="${test.id}"/>'><c:out value="${test.nombre}"/></option>
         </c:forEach>
       </select>
       <br><br>
-      <select id="seleccionaropcion" name="selectsec">
+      <select id="seleccionaropcion" name="idSeccion" value="formaNuevaPregunta.idSeccion">
         <option></option>
       </select>
       <br><br>
       <input type="text" name="pregunta" class="pregunta" placeholder="Pregunta"><br><br>
-      <input type"submit" value="Nueva Pregunta" class="envio" /><br><br>
+      <input type="submit" value="Nueva Pregunta" class="envio" /><br><br>
       </form>
     </div>

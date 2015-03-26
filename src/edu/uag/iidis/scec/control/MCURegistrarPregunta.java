@@ -109,8 +109,11 @@ public final class MCURegistrarPregunta
         
         // Se obtienen los datos para procesar el registro
         FormaNuevaPregunta forma = (FormaNuevaPregunta)form;
-
-        Pregunta pregunta = new Pregunta(forma.getidSeccion(),forma.getRespuestaCorrecta(),forma.getPregunta());
+        Long aux=new Long("000");
+        if(forma.getidSeccion()==null||forma.getPregunta()==null){
+            log.debug("Nueva Pregunta:***Nulo");
+        }else{log.debug("Nueva Pregunta:***OK");}
+        Pregunta pregunta = new Pregunta(forma.getidSeccion(),aux,forma.getPregunta());
 
         ManejadorPreguntas mr = new ManejadorPreguntas();
         int resultado = mr.crearPregunta(pregunta);
