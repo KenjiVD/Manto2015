@@ -18,7 +18,7 @@
         <option>Elegir Seccion</option>
       </select>
       <br><br>
-      <select id="seleccionaropcionpregunta" name="id">
+      <select id="seleccionaropcionpregunta" name="idPregunta">
         <option></option>
       </select>
       <br><br>

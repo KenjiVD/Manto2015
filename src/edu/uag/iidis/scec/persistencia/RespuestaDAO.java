@@ -140,6 +140,38 @@ public class RespuestaDAO {
 
     }
 
+    public boolean numeroRespuestas(Long idPregunta){
+              try {
+            
+            String hql = "select respuesta from Respuesta where idPregunta = :Nombres";
+           
+        
+            Query query = HibernateUtil.getSession()
+                                        .createQuery(hql);
+
+            query.setParameter("Nombres", idPregunta);
+            if (log.isDebugEnabled()) {
+                 log.debug("Verificar num de respuestas"+hql);
+            }
+            List results = query.list();
+            int resultado = results.size();
+            if (log.isDebugEnabled()) {
+                 log.debug("<<<<<<<<< Result size " + resultado);
+            }
+            if (resultado < 3) {
+               return false;
+            }
+            
+            return true;
+
+        } catch (HibernateException ex) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException *******************"+ex.getMessage());
+            }
+                throw new ExcepcionInfraestructura(ex);
+    }
+}
+
     public void hazTransitorio(Respuesta respuesta)
             throws ExcepcionInfraestructura {
 

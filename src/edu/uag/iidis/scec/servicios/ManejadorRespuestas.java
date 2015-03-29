@@ -102,7 +102,7 @@ public class ManejadorRespuestas {
         try {
             HibernateUtil.beginTransaction();           
             
-            if (dao.existeRespuesta(respuesta.getRespuesta())) {
+            if (dao.existeRespuesta(respuesta.getRespuesta())||dao.numeroRespuestas(respuesta.getidPregunta())) {
                resultado = 1; // Excepción. El nombre de respuesta ya existe
             } else {
                dao.hazPersistente(respuesta);
