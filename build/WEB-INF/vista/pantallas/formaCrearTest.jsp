@@ -35,10 +35,10 @@
               <div class="tr">
                   <div class="td" align="left" style="width:20%"><c:out value="${test.pregunta}"/></div>
               </div>
-              <select class="tr">
-                <option class="td" align="left" style="width:20%" >Elige la respuesta correcta</option>
+              <select>
+                <option>Elige la respuesta correcta</option>
             <% } %>
-                  <option class="td" align="left" style="width:20%" value="<c:out value='${test.idr}'/>" name="mirespuesta"><c:out value="${test.respuesta}"/></option>
+                  <option value="<c:out value='${test.idr}'/>" name="mirespuesta"><c:out value="${test.respuesta}"/></option>
             <%
             contar++;
             if (contar == 3) { %>
