@@ -23,6 +23,44 @@ public class PreguntaDAO {
     public PreguntaDAO() {
     }
 
+    public Collection buscarPorSeccion(Long idp)
+            throws ExcepcionInfraestructura {
+               
+        Collection secciones;
+
+
+        try {
+            
+            String hql = "from Pregunta where idSeccion = :id";
+            
+             if (log.isDebugEnabled()) {
+                 log.debug(hql + idp);
+            }
+        
+            Query query = HibernateUtil.getSession()
+                                        .createQuery(hql);
+            
+
+            query.setParameter("id", idp);
+
+            
+            if (log.isDebugEnabled()) {
+                 log.debug("  ***query:   "+hql );
+            }
+
+            secciones = query.list();
+
+            return secciones;
+
+        } catch (HibernateException ex) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException *******************");
+                ex.printStackTrace();
+            }
+            throw new ExcepcionInfraestructura(ex);
+        }
+    }
+
 
     public Pregunta buscarPorId(Long idPregunta, boolean bloquear)
             throws ExcepcionInfraestructura {

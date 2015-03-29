@@ -75,6 +75,55 @@ public final class MCUListarPreguntas
 
     }
 
+    public ActionForward solicitarListarPreguntasOpcion(
+                ActionMapping mapping,
+                ActionForm form,
+                HttpServletRequest request,
+                HttpServletResponse response)
+            throws Exception {
+
+        if (log.isDebugEnabled()) {
+            log.debug(">solicitarListarPreguntasOpcion");
+        }
+
+        // Verifica si la acción fue cancelada por el usuario
+        if (isCancelled(request)) {
+            if (log.isDebugEnabled()) {
+                log.debug("<La acción fue cancelada");
+            }
+            return (mapping.findForward("cancelar"));
+        }
+
+        FormaListadoPreguntasOpcion forma = (FormaListadoPreguntasOpcion)form;
+
+        ManejadorPreguntas mr = new ManejadorPreguntas();
+       /* if (log.isDebugEnabled()) {
+            log.debug(">var1: ");
+        }*/
+        Collection resultado = mr.buscarPreguntasSeccion(forma.getValor());
+
+        ActionMessages errores = new ActionMessages();
+        if (resultado != null) {
+            if ( resultado.isEmpty() ) {
+                log.debug(">***Resultado Vacio");
+                errores.add(ActionMessages.GLOBAL_MESSAGE,
+                    new ActionMessage("errors.registroVacio"));
+                saveErrors(request, errores);
+            } else {
+                log.debug(">***Resultado Satisfactorio");
+                forma.setPregunta( resultado );
+            }
+            return (mapping.findForward("exito"));
+        } else {
+            log.error("Ocurrió un error de infraestructura");
+            errores.add(ActionMessages.GLOBAL_MESSAGE,
+                        new ActionMessage("errors.infraestructura"));                
+            saveErrors(request, errores);
+            return ( mapping.findForward("fracaso") );
+        }
+
+    }
+
    /* public ActionForward solicitarOrdNombres(
                 ActionMapping mapping,
                 ActionForm form,

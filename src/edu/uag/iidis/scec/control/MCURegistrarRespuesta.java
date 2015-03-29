@@ -37,15 +37,15 @@ public final class MCURegistrarRespuesta
 
         //ManejadorSecciones mr = new ManejadorSecciones();
        // Collection resultado = mr.listarSecciones();
-        ManejadorPreguntas mr2 = new ManejadorPreguntas();
-        Collection resultado2 = mr2.listarPreguntas();
+        ManejadorTest mr2 = new ManejadorTest();
+        Collection resultado2 = mr2.listarTest();
         
         if (log.isDebugEnabled()) {
             if(resultado2==null){
             log.debug("Lista Nula****");}
             else{log.debug("Lista Ok****");}
         }
-        forma.setPreguntas(resultado2);
+        forma.setTest(resultado2);
         return (mapping.findForward("exito"));
     }
 

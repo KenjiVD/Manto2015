@@ -18,10 +18,23 @@ public final class FormaNuevaRespuesta
         extends ValidatorForm {
 
     private Collection preguntas;
+    private Collection test;
     private int contador;
     private String respuesta;
     private Long idPregunta;
     private boolean correcta;
+
+    public void setTest(Collection test) {
+        this.test = test;
+        if (test != null) {
+          this.contador = test.size();
+        } else
+          this.contador = -1;
+    }
+
+    public Collection getTest() {
+        return (this.test);
+    }
 
     public void setPreguntas(Collection preguntas) {
         this.preguntas = preguntas;

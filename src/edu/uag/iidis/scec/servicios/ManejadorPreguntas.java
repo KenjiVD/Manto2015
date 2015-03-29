@@ -38,6 +38,28 @@ public class ManejadorPreguntas {
             HibernateUtil.closeSession();
         }
     }
+
+    public Collection buscarPreguntasSeccion(Long preguntaBuscar) {
+        Collection resultado;
+
+        if (log.isDebugEnabled()) {
+            log.debug(">***Buscar Seccion:"+preguntaBuscar);
+        }
+
+        try {
+            HibernateUtil.beginTransaction();
+            resultado = dao.buscarPorSeccion(preguntaBuscar);
+            HibernateUtil.commitTransaction();
+            log.debug(">***Saliendo de manejadorPreguntas");
+            return resultado;         
+        } catch (ExcepcionInfraestructura e) {
+            HibernateUtil.rollbackTransaction();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
+
 /*
     public Collection listarPreguntasOrd(String tipo, int tipoInt) {
 

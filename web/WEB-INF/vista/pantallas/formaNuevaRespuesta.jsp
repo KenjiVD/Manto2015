@@ -7,11 +7,19 @@
     <div id="pregunta">
       <form action="procesarRegistroRespuesta.do" method="post">
       <h1>Nueva Respuesta</h1>
-      <select id="seleccionar" name="idPregunta" value="formaNuevaRespuesta.idPregunta">
-        <option>Elegir Pregunta</option>
-        <c:forEach var="pregunta" items="${formaNuevaRespuesta.preguntas}">
-            <option value='<c:out value="${pregunta.id}"/>'><c:out value="${pregunta.pregunta}"/></option>
+      <select id="seleccionar" name="idTest" onchange="listaSecciones()">
+        <option>Elegir Test</option>
+        <c:forEach var="test" items="${formaNuevaRespuesta.test}">
+            <option value='<c:out value="${test.id}"/>'><c:out value="${test.nombre}"/></option>
         </c:forEach>
+      </select>
+      <br><br>
+      <select id="seleccionaropcion" name="idSeccion" onchange="listaPreguntas()">
+        <option>Elegir Seccion</option>
+      </select>
+      <br><br>
+      <select id="seleccionaropcionpregunta" name="id">
+        <option></option>
       </select>
       <br><br>
       <input type="text" name="respuesta" class="pregunta" placeholder="Respuesta">

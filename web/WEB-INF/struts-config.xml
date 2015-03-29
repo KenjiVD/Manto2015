@@ -50,6 +50,9 @@
         <form-bean name="formaListadoSeccionesOpcion"
                    type="edu.uag.iidis.scec.vista.FormaListadoSeccionesOpcion">
         </form-bean>
+        <form-bean name="formaListadoPreguntasOpcion"
+                   type="edu.uag.iidis.scec.vista.FormaListadoPreguntasOpcion">
+        </form-bean>
         <form-bean name="formaListadoTest"
                    type="edu.uag.iidis.scec.vista.FormaListadoTest">
         </form-bean>
@@ -154,6 +157,16 @@
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
 
+        <action path="/procesarListadoPregunta"
+                type="edu.uag.iidis.scec.control.MCUListarPreguntas"
+                parameter="solicitarListarPreguntasOpcion"
+                name="formaListadoPreguntasOpcion"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/formaListadoPreguntasOpcion.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+
         <action path="/generarTest"
                 type="edu.uag.iidis.scec.control.MCUCrearTest"
                 parameter="solicitarCrearTest"
@@ -192,6 +205,16 @@
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaSeccion.jsp"/>
         </action>
+
+        <action path="/solicitarRegistroRespuesta"
+                type="edu.uag.iidis.scec.control.MCURegistrarRespuesta"
+                parameter="solicitarRegistroRespuesta"
+                name="formaNuevaRespuesta"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaRespuesta.jsp"/>
+        </action>
+
         <action path="/procesarRegistroSeccion"
                 type="edu.uag.iidis.scec.control.MCURegistrarSeccion"
                 parameter="procesarRegistroSeccion"
@@ -235,14 +258,7 @@
             <forward name="volver" path="irNuevos.do" redirect="true"/>
        </action>
 
-       <action path="/solicitarRegistroRespuesta"
-                type="edu.uag.iidis.scec.control.MCURegistrarRespuesta"
-                parameter="solicitarRegistroRespuesta"
-                name="formaNuevaRespuesta"
-                scope="request"
-                validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaRespuesta.jsp"/>
-        </action>
+       <!--aca va-->
 
         <action path="/procesarRegistroRespuesta"
                 type="edu.uag.iidis.scec.control.MCURegistrarRespuesta"
