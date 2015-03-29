@@ -20,20 +20,8 @@
   }
 -->
 </script>
-    <br>
-    <font size='5'><fmt:message key="formaListadoTest.titulo" /></font>
    
       <div class="table" style="width:100%"  id="tablecontent">
-          <div class="tr">
-              <div class="td" colspan="4" style="padding-top:25px; padding-bottom:25px;">
-                  <a href="solicitarRegistroTest.do" class="HipervinculoAdmon boton">Agregar nuevo Test</a>
-              </div>
-          </div>
-          <div class="tr">
-              <div class="td" colspan="4">
-                 <html:errors />
-              </div>
-          </div>
           <div class="tr enlaces" style="background:#CCCCCC">
            <div class="td" style="width:16%"><b id="nombre">
             <fmt:message key="formaListadoTest.etiqueta.nombre" /></b></div>
@@ -47,13 +35,14 @@
               <div class="tr">
                   <div class="td" align="left" style="width:20%"><c:out value="${test.pregunta}"/></div>
               </div>
-              <div class="tr">
+              <select class="tr">
+                <option class="td" align="left" style="width:20%" >Elige la respuesta correcta</option>
             <% } %>
-                  <div class="td" align="left" style="width:20%"><c:out value="${test.respuesta}"/></div>
+                  <option class="td" align="left" style="width:20%" value="<c:out value='${test.idr}'/>" name="mirespuesta"><c:out value="${test.respuesta}"/></option>
             <%
             contar++;
             if (contar == 3) { %>
-              </div>
+              </select>
             <% contar = 0;
             } %>
           </c:forEach>
