@@ -6,16 +6,20 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import edu.uag.iidis.scec.modelo.Respuesta;
+import edu.uag.iidis.scec.modelo.Pregunta;
 import edu.uag.iidis.scec.excepciones.*;
 import edu.uag.iidis.scec.persistencia.RespuestaDAO;
+import edu.uag.iidis.scec.persistencia.PreguntaDAO;
 import edu.uag.iidis.scec.persistencia.hibernate.*;
 
 public class ManejadorRespuestas {
     private Log log = LogFactory.getLog(ManejadorRoles.class);
     private RespuestaDAO dao;
+    private PreguntaDAO dao2;
 
     public  ManejadorRespuestas() {
         dao = new RespuestaDAO();
+        dao2=new PreguntaDAO();
     }
 
 
@@ -101,9 +105,17 @@ public class ManejadorRespuestas {
             if (dao.existeRespuesta(respuesta.getRespuesta())) {
                resultado = 1; // Excepción. El nombre de respuesta ya existe
             } else {
-
                dao.hazPersistente(respuesta);
-
+               if(respuesta.getCorrecta()){
+               Long a=dao.getIdRespuesta(respuesta.getRespuesta());
+               Pregunta pregunta=dao2.buscarPorId(respuesta.getidPregunta(),true);
+               pregunta.setIdRespuestaCorrecta(a);
+               dao2.hazPersistente(pregunta);
+               log.debug("******El id es:"+a);}
+               else{
+                log.debug("****** Incorrecta");
+               }
+               //dao2.
                resultado = 0; // Exito. respuesta se creo satisfactoriamente.
             }
 

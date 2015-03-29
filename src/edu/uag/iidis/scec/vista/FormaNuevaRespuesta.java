@@ -53,7 +53,7 @@ public final class FormaNuevaRespuesta
         return (this.idPregunta);
     }
 
-    public void setCorrecta(Boolean c){
+    public void setCorrecta(boolean c){
         this.correcta=c;
 
     }

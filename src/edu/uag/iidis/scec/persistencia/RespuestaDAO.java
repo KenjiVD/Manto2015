@@ -14,7 +14,7 @@ import org.apache.commons.logging.LogFactory;
 
 import java.util.Collection;
 import java.util.List;
-
+import java.util.Iterator;
 
 public class RespuestaDAO {
 
@@ -53,6 +53,8 @@ public class RespuestaDAO {
         }
         return respuesta;
     }
+
+
 
 
     public Collection buscarTodos()
@@ -109,7 +111,9 @@ public class RespuestaDAO {
         }
 
         try {
+
             HibernateUtil.getSession().saveOrUpdate(respuesta);
+
         } catch (HibernateException e) {
             if (log.isWarnEnabled()) {
                 log.warn("<HibernateException");
@@ -118,6 +122,23 @@ public class RespuestaDAO {
         }
     }
 
+
+    public Long getIdRespuesta(String res){
+        Long idres=new Long("0");
+
+        Collection respuestas=this.buscarTodos();
+        Iterator<Respuesta> it=respuestas.iterator();
+        while(it.hasNext()){
+            Respuesta respuesta=it.next();
+            if(respuesta.getRespuesta().equals(res)){
+                idres=respuesta.getId();
+                break;
+            }
+        }
+        
+        return idres;
+
+    }
 
     public void hazTransitorio(Respuesta respuesta)
             throws ExcepcionInfraestructura {
@@ -145,7 +166,7 @@ public class RespuestaDAO {
 
         try {
 			
-			String hql = "select resuesta from Respuestas where respuesta = :Nombres";
+			String hql = "select respuesta from Respuesta where respuesta = :Nombres";
 			
 			 if (log.isDebugEnabled()) {
            		 log.debug(hql + nombreRespuesta);

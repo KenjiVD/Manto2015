@@ -5,7 +5,7 @@
 
 
     <div id="pregunta">
-      <form action="ProcesarResgistroRespuesta.do" method="post">
+      <form action="procesarRegistroRespuesta.do" method="post">
       <h1>Nueva Respuesta</h1>
       <select id="seleccionar" name="idPregunta" value="formaNuevaRespuesta.idPregunta">
         <option>Elegir Pregunta</option>
@@ -14,7 +14,13 @@
         </c:forEach>
       </select>
       <br><br>
-      <input type="text" name="respuesta" class="pregunta" placeholder="Respuesta"><br><br>
-      <input type"submit" value="Nueva Respuesta" class="envio" /><br><br>
+      <input type="text" name="respuesta" class="pregunta" placeholder="Respuesta">
+      <select name="correcta" value="formaNuevaRespuesta.correcta">
+        <option value="false">Incorrecta</option>
+        <option value="true">Correcta</option>
+      </select>
+      <br><br>
+
+      <input type="submit" value="Nueva Respuesta" class="envio" /><br><br>
       </form>
     </div>

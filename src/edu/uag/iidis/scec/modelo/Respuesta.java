@@ -19,6 +19,7 @@ public class Respuesta extends ClaseBase
     private Long id;
     private Long idPregunta;
     private String respuesta;
+    boolean correcta;
 
     public Respuesta() {
     }
@@ -27,8 +28,8 @@ public class Respuesta extends ClaseBase
         this.id = id;
     }
 
-    public Respuesta( Long idPregunta,String respuesta){
-     //   this.id=idRespuesta;
+    public Respuesta( Long idPregunta,String respuesta, boolean correcta){
+        this.correcta=correcta;
         this.idPregunta=idPregunta;
         this.respuesta=respuesta;
     }
@@ -44,6 +45,7 @@ public class Respuesta extends ClaseBase
     public void setId(Long id) {
         this.id = id;
     }
+
 
     // ID Ciudad
     public Long getidPregunta() {
@@ -64,6 +66,13 @@ public class Respuesta extends ClaseBase
         this.respuesta = respuesta;
     }
 
+    public boolean getCorrecta(){
+        return this.correcta;
+    }
+
+    public void setCorrecta(boolean c){
+        this.correcta=c;
+    }
 
    
 }

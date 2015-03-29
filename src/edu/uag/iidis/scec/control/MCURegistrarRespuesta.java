@@ -74,8 +74,7 @@ public final class MCURegistrarRespuesta
         // Se obtienen los datos para procesar el registro
         FormaNuevaRespuesta forma = (FormaNuevaRespuesta)form;
 
-        Respuesta respuesta = new Respuesta(forma.getidPregunta(),forma.getRespuesta());
-
+        Respuesta respuesta = new Respuesta(forma.getidPregunta(),forma.getRespuesta(),forma.getCorrecta());
         ManejadorRespuestas mr = new ManejadorRespuestas();
         int resultado = mr.crearRespuesta(respuesta);
 
