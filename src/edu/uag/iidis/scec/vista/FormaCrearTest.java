@@ -20,6 +20,9 @@ public final class FormaCrearTest
     private Collection test;
     private int contador;
     private Long valor;
+    private Long[] preguntas=new Long[9];
+    private Long[] respuestas=new Long[9];
+    private String name;
 
 
     public void setTest(Collection test) {
@@ -46,11 +49,33 @@ public final class FormaCrearTest
          this.valor = valor;
     }
 
+    public Long[] getRespuestas(){
+        return this.respuestas;
+    }
+    public void setRespuestas(Long[] respuestas){
+        this.respuestas=respuestas;
+    }
+
+    public Long[] getPreguntas(){
+        return this.preguntas;
+    }
+    public void setPreguntas(Long[] preguntas){
+        this.preguntas=preguntas;
+    }
+    public String getName(){
+        return this.name;
+    }
+    public void setName(String name){
+        this.name=name;
+    }
+
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {
         contador=0;
         test=null;
         valor=null;
+        respuestas=new Long[9];
+        preguntas=new Long[9];
     }
 
 

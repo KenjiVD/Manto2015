@@ -26,6 +26,7 @@
         <form-bean name="formaAdminTest"
                    type="edu.uag.iidis.scec.vista.FormaAdminTest">
         </form-bean>
+
         <form-bean name="formaCrearTest"
                    type="edu.uag.iidis.scec.vista.FormaCrearTest">
         </form-bean>
@@ -132,6 +133,9 @@
                 <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp"/>
                 </action>
             <!--   Test-->
+
+
+
          <action path="/solicitarListarTest"
                 type="edu.uag.iidis.scec.control.MCUListarTest"
                 parameter="solicitarListarTest"
@@ -176,6 +180,18 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaCrearTest.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
+
+         <action path="/procesarCrearTest"
+                type="edu.uag.iidis.scec.control.MCUCrearTest"
+                parameter="procesarCrearTest"
+                name="formaCrearTest"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaCrearTest.jsp" >
+            <forward name="cancelar" path="/irNuevos.do" redirect="true"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="volver" path="irNuevos.do" redirect="true"/>
+       </action>
 
         <action path="/solicitarRegistroTest"
                 type="edu.uag.iidis.scec.control.MCURegistrarTest"

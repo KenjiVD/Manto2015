@@ -16,7 +16,7 @@ import java.util.*;
 public class Historial extends ClaseBase 
         implements Serializable {
 
-    private Long idHistorial;
+    private Long id;
     private Long idTest;
     private Long idPregunta;
     private Long idRespuesta;
@@ -26,30 +26,26 @@ public class Historial extends ClaseBase
     }
 
     public Historial(Long id){
-        this.idHistorial = id;
+        this.id = id;
     }
 
-    public Historial(Long idHistorial, Long idTest,Long idPregunta,Long idRespuesta,Long resultado){
-        this.idHistorial=idHistorial;
+    public Historial(Long idTest,Long idPregunta,Long idRespuesta,Long resultado){
+        //this.idHistorial=idHistorial;
         this.idTest=idTest;
         this.idPregunta=idPregunta;
         this.idRespuesta=idRespuesta;
         this.resultado=resultado;
     }
 
-    /**
-     * Regresa el id del rol.
-     * @return Long
-     */
-    public Long getidHistorial() {
-        return this.idHistorial;
-    }
+        public Long getId(){
+            return this.id;
+        }
+        public void setId(Long id){
+            this.id=id;
 
-    public void setidHistorial(Long id) {
-        this.idHistorial = id;
-    }
+        }
 
-    // ID Ciudad
+
     public Long getidTest() {
         return this.idTest;
     }
