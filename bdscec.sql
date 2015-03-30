@@ -83,8 +83,9 @@ CREATE TABLE `historialrespuestas` (
   `idPregunta` int(11) NOT NULL,
   `idRespuesta` int(11) NOT NULL,
   `Resultado` int(11) NOT NULL COMMENT 'Use 0 para indicar respuesta incorrecta y 1 para indicar respuesta correcta',
+  `nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`idHistorial`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,8 +94,28 @@ CREATE TABLE `historialrespuestas` (
 
 LOCK TABLES `historialrespuestas` WRITE;
 /*!40000 ALTER TABLE `historialrespuestas` DISABLE KEYS */;
+INSERT INTO `historialrespuestas` VALUES (1,1,1,1,0,'Emanuel'),(2,1,5,13,0,'Emanuel'),(3,1,3,7,0,'Emanuel'),(4,1,7,19,0,'Emanuel'),(5,1,1,2,0,'Adriana'),(6,1,5,14,0,'Adriana'),(7,1,3,8,0,'Adriana'),(8,1,7,20,0,'Adriana'),(9,1,1,3,0,'Rafael'),(10,1,5,15,0,'Rafael'),(11,1,3,9,0,'Rafael'),(12,1,7,21,0,'Rafael'),(13,2,2,4,0,'Adriana'),(14,2,6,16,0,'Adriana'),(15,2,4,10,0,'Adriana'),(16,2,8,22,0,'Adriana'),(17,2,2,5,0,'Rafael'),(18,2,6,17,0,'Rafael'),(19,2,4,11,0,'Rafael'),(20,2,8,23,0,'Rafael'),(21,2,2,6,0,'Emanuel'),(22,2,6,18,0,'Emanuel'),(23,2,4,12,0,'Emanuel'),(24,2,8,24,0,'Emanuel');
 /*!40000 ALTER TABLE `historialrespuestas` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `historiatest`
+--
+
+DROP TABLE IF EXISTS `historiatest`;
+/*!50001 DROP VIEW IF EXISTS `historiatest`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `historiatest` AS SELECT 
+ 1 AS `idt`,
+ 1 AS `idh`,
+ 1 AS `nombre`,
+ 1 AS `idp`,
+ 1 AS `idr`,
+ 1 AS `idrc`,
+ 1 AS `pregunta`,
+ 1 AS `respuesta`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `personas`
@@ -320,6 +341,24 @@ LOCK TABLES `usuarios` WRITE;
 UNLOCK TABLES;
 
 --
+-- Final view structure for view `historiatest`
+--
+
+/*!50001 DROP VIEW IF EXISTS `historiatest`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `historiatest` AS select `historialrespuestas`.`idTest` AS `idt`,`historialrespuestas`.`idHistorial` AS `idh`,`historialrespuestas`.`nombre` AS `nombre`,`historialrespuestas`.`idPregunta` AS `idp`,`historialrespuestas`.`idRespuesta` AS `idr`,`pregunta`.`idRespuestaCorrecta` AS `idrc`,`pregunta`.`pregunta` AS `pregunta`,`respuesta`.`respuesta` AS `respuesta` from ((`historialrespuestas` join `pregunta` on((`pregunta`.`idPregunta` = `historialrespuestas`.`idPregunta`))) join `respuesta` on((`respuesta`.`idRespuesta` = `historialrespuestas`.`idRespuesta`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
 -- Final view structure for view `testgenerado`
 --
 
@@ -346,4 +385,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-25 14:07:47
+-- Dump completed on 2015-03-30 13:46:53
