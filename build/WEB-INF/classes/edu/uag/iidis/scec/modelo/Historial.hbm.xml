@@ -28,6 +28,10 @@
         <property name="Resultado"
             type="java.lang.Long"
             not-null="true" />
+
+        <property name="nombre"
+            type="java.lang.String"
+            not-null="true" />
             
     </class>
 

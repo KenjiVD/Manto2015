@@ -26,9 +26,11 @@
         <form-bean name="formaAdminTest"
                    type="edu.uag.iidis.scec.vista.FormaAdminTest">
         </form-bean>
-
         <form-bean name="formaCrearTest"
                    type="edu.uag.iidis.scec.vista.FormaCrearTest">
+        </form-bean>
+        <form-bean name="formaCrearHistorialTest"
+                   type="edu.uag.iidis.scec.vista.FormaCrearHistorialTest">
         </form-bean>
          <form-bean name="formaNuevoTest"
                    type="edu.uag.iidis.scec.vista.FormaNuevoTest">
@@ -178,6 +180,16 @@
                 scope="request"
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaCrearTest.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+
+        <action path="/historialTest"
+                type="edu.uag.iidis.scec.control.MCUCrearTest"
+                parameter="solicitarCrearHistorialTest"
+                name="formaCrearHistorialTest"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaCrearHistorialTest.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
 

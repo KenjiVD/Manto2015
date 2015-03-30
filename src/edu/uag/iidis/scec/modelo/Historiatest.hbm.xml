@@ -1,16 +1,24 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">  
 
 <hibernate-mapping>
-    <class name="edu.uag.iidis.scec.modelo.Testgenerado"
-           table="Testgenerado"
+    <class name="edu.uag.iidis.scec.modelo.Historiatest"
+           table="Historiatest"
            dynamic-update="false"
            dynamic-insert="false">
 
-        <id name="idr"
-            column="idr"
+        <id name="idh"
+            column="idh"
             type="java.lang.Long"
             unsaved-value="null" >
         </id>
+
+        <property name="idr"
+            type="java.lang.Long"
+            not-null="true" />
+
+        <property name="idrc"
+            type="java.lang.Long"
+            not-null="true" />
 
         <property name="idt"
             type="java.lang.Long"
@@ -25,6 +33,10 @@
             not-null="true" />
 
         <property name="pregunta"
+            type="java.lang.String"
+            not-null="true" />
+
+        <property name="nombre"
             type="java.lang.String"
             not-null="true" />
             

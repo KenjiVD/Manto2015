@@ -70,7 +70,49 @@ public final class MCUCrearTest
 
     }
 
+    public ActionForward solicitarCrearHistorialTest(
+                ActionMapping mapping,
+                ActionForm form,
+                HttpServletRequest request,
+                HttpServletResponse response)
+            throws Exception {
 
+        if (log.isDebugEnabled()) {
+            log.debug(">solicitarCrearHistorialTest");
+        }
+
+        // Verifica si la acción fue cancelada por el usuario
+        if (isCancelled(request)) {
+            if (log.isDebugEnabled()) {
+                log.debug("<La acción fue cancelada");
+            }
+            return (mapping.findForward("cancelar"));
+        }
+
+        FormaCrearHistorialTest forma = (FormaCrearHistorialTest)form;
+
+        ManejadorTest mr = new ManejadorTest();
+        Collection resultado = mr.generarHistorialTest(forma.getValor());
+
+        ActionMessages errores = new ActionMessages();
+        if (resultado != null) {
+            if ( resultado.isEmpty() ) {
+                errores.add(ActionMessages.GLOBAL_MESSAGE,
+                    new ActionMessage("errors.registroVacio"));
+                saveErrors(request, errores);
+            } else {
+                forma.setHistoriatest( resultado );
+            }
+            return (mapping.findForward("exito"));
+        } else {
+            log.error("Ocurrió un error de infraestructura");
+            errores.add(ActionMessages.GLOBAL_MESSAGE,
+                        new ActionMessage("errors.infraestructura"));                
+            saveErrors(request, errores);
+            return ( mapping.findForward("fracaso") );
+        }
+
+    }
 
     public ActionForward procesarCrearTest(
                 ActionMapping mapping,
@@ -110,7 +152,7 @@ public final class MCUCrearTest
             if(preguntas[a]==null||respuestas[a]==null){log.debug("breaking at "+a);break;}
             else{
                 log.debug("Historial "+a);
-            Historial historial = new Historial(tempo,preguntas[a],respuestas[a],tempo);
+            Historial historial = new Historial(tempo,preguntas[a],respuestas[a],tempo,forma.getName());
             historiales.add(historial);}
          }
 

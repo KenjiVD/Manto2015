@@ -40,10 +40,11 @@
           </div>
           <c:forEach var="test" items="${formaListadoTest.test}">
               <div class="tr">
-                <form action="generarTest.do" method="post">
+                <form method="post">
                   <div class="td" align="left" style="width:20%"><c:out value="${test.nombre}"/></div>
                   <div class="td" align="left" style="width:20%"><input type="hidden" name="valor" value="<c:out value='${test.id}'/>" /></div>
-                  <div class="td" align="left" style="width:20%"><input type="submit" value="Realizar Test"/></div>
+                  <div class="td" align="left" style="width:20%"><input type="submit" onclick = "this.form.action = 'generarTest.do'" value="Realizar Test"/></div>
+                  <div class="td" align="left" style="width:20%"><input type="submit" onclick = "this.form.action = 'historialTest.do'" value="Historial Test"/></div>
                 </form>
               </div>
           </c:forEach>

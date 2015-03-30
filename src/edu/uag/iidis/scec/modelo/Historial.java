@@ -21,6 +21,7 @@ public class Historial extends ClaseBase
     private Long idPregunta;
     private Long idRespuesta;
     private Long resultado;
+    private String nombre;
 
     public Historial() {
     }
@@ -29,12 +30,13 @@ public class Historial extends ClaseBase
         this.id = id;
     }
 
-    public Historial(Long idTest,Long idPregunta,Long idRespuesta,Long resultado){
+    public Historial(Long idTest,Long idPregunta,Long idRespuesta,Long resultado,String nombre){
         //this.idHistorial=idHistorial;
         this.idTest=idTest;
         this.idPregunta=idPregunta;
         this.idRespuesta=idRespuesta;
         this.resultado=resultado;
+        this.nombre=nombre;
     }
 
         public Long getId(){
@@ -83,6 +85,11 @@ public class Historial extends ClaseBase
         this.resultado = id;
     }
 
-
+    public String getNombre() {
+        return this.nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
    
 }

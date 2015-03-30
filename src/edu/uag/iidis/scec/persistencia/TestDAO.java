@@ -221,4 +221,42 @@ public class TestDAO {
         }
     }
 
+    public Collection generarHistorialTest(Long idt)
+            throws ExcepcionInfraestructura {
+               
+        Collection test;
+
+
+        try {
+            
+            String hql = "from Historiatest where idt = :id";
+            
+             if (log.isDebugEnabled()) {
+                 log.debug(hql  + idt);
+            }
+        
+            Query query = HibernateUtil.getSession()
+                                        .createQuery(hql);
+            
+
+            query.setParameter("id", idt);
+
+            
+            if (log.isDebugEnabled()) {
+                 log.debug("  ***query:   "+hql );
+            }
+
+            test = query.list();
+
+            return test;
+
+        } catch (HibernateException ex) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException *******************");
+                ex.printStackTrace();
+            }
+            throw new ExcepcionInfraestructura(ex);
+        }
+    }
+
 }

@@ -37,6 +37,25 @@ public class ManejadorTest {
             HibernateUtil.closeSession();
         }
     }
+    public Collection generarHistorialTest(Long id) {
+        Collection resultado;
+
+        if (log.isDebugEnabled()) {
+            log.debug(">guardarUsuario(usuario)");
+        }
+
+        try {
+            HibernateUtil.beginTransaction();
+            resultado = dao.generarHistorialTest(id);
+            HibernateUtil.commitTransaction();
+            return resultado;         
+        } catch (ExcepcionInfraestructura e) {
+            HibernateUtil.rollbackTransaction();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
 
     public Collection listarTest() {
         Collection resultado;
