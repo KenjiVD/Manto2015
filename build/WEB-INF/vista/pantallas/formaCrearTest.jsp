@@ -24,18 +24,21 @@
 
             <input type="text" name="name" placeholder="Escriba su nombre" value="${formaCrearTest.name}"> 
           <%
-          int contar = 0; 
+          int contar = 0; boolean aux=true;
           int i=0;  //index arreglo de preguntas
-          int j=0;  //index arreglo respuestas
           %>
           <c:forEach var="test" items="${formaCrearTest.test}">
+          <% if(aux){%>
+              <input type="hidden" name="idTest" value="<c:out value='${test.idt}'/>"> 
+           <% aux=false;}%>
+
             <%
             if (contar == 0) { %>
               <div class="tr">
                   <div class="td" align="left" style="width:20%" ><c:out value="${test.pregunta}"/></div>
                   <input type="hidden" name="preguntas[<%=i%>]" value="<c:out value='${test.idp}'/>"/> 
               </div>
-              <select name="respuestas[<%=j%>]">
+              <select name="respuestas[<%=i%>]">
                 <option>Elige la respuesta correcta</option>
             <% } %>
                   <option value="<c:out value='${test.idr}'/>" ><c:out value="${test.respuesta}"/></option>
@@ -43,8 +46,8 @@
             contar++;
             if (contar == 3) { %>
               </select>
-            <% contar = 0;i++;j++;
-            } %>
+            <% contar = 0;i++;
+            }  %>
           </c:forEach>
           <div class="tr">
               <div class="td" colspan="4" align="right" style="padding-top:25px;"><b>Total:</b> ${formaListadoTest.contador}</div>
