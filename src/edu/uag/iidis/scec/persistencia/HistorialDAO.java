@@ -8,6 +8,7 @@ import org.hibernate.criterion.Example;
 
 import edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura;
 import edu.uag.iidis.scec.modelo.Historial;
+import edu.uag.iidis.scec.modelo.Pregunta;
 import edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -126,7 +127,8 @@ public class HistorialDAO {
 
     public void hazPersistentes(ArrayList historiales)
             throws ExcepcionInfraestructura {
-
+                PreguntaDAO dao=new PreguntaDAO();
+                Long aux=null;
         if (log.isDebugEnabled()) {
             log.debug(">hazPersistentes(Historial)");
         }
@@ -135,6 +137,11 @@ public class HistorialDAO {
             Iterator<Historial> it=historiales.iterator();
         while(it.hasNext()){
             Historial historial=it.next();
+            Pregunta pregunta=dao.buscarPorId(historial.getidPregunta(),true);
+            if(pregunta.getIdRespuestaCorrecta().equals(historial.getidRespuesta())){
+                    aux=new Long("1");
+            }else{  aux=new Long("0");}
+            historial.setResultado(aux);
             HibernateUtil.getSession().saveOrUpdate(historial);
         }
            
