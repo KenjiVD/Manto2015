@@ -141,7 +141,6 @@ public final class MCUCrearTest
         Long[] respuestas=forma.getRespuestas();
         Long[] preguntas=forma.getPreguntas();
         Long tempo=new Long("0");
-        //Criteria criteria = HibernateUtil.getSession().createCriteria(Historial.class);
         if(log.isDebugEnabled()){
             log.debug("Aqui:***"+forma.getName());
             if(respuestas==null||preguntas==null){
@@ -152,7 +151,7 @@ public final class MCUCrearTest
             if(preguntas[a]==null||respuestas[a]==null){log.debug("breaking at "+a);break;}
             else{
                 log.debug("Historial "+a);
-            Historial historial = new Historial(tempo,preguntas[a],respuestas[a],tempo,forma.getName());
+            Historial historial = new Historial(forma.getidTest(),preguntas[a],respuestas[a],tempo,forma.getName());
             historiales.add(historial);}
          }
 

@@ -23,7 +23,7 @@ public final class FormaCrearTest
     private Long[] preguntas=new Long[9];
     private Long[] respuestas=new Long[9];
     private String name;
-
+    private Long idTest;
 
     public void setTest(Collection test) {
         this.test = test;
@@ -68,7 +68,13 @@ public final class FormaCrearTest
     public void setName(String name){
         this.name=name;
     }
+    public Long getidTest(){
+       return this.idTest;
+    }
 
+    public void setidTest(Long idTest){
+            this.idTest=idTest;
+    }
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {
         contador=0;
