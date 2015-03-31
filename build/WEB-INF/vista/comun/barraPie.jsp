@@ -11,6 +11,7 @@
 		<b>Equpo conformado por:</b><br />
 		<li>Emanuel Roque Pimentel</li>
 		<li>Yarib Octavio López Hernández</li>
+		<li>Cristian Michel Pérez Zárate</li>
 		<li>Stephania Cal y Mayor Cardona</li>
 	</section>
 	<!-- Fin de Sección - Pie de página -->
