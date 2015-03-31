@@ -34,6 +34,7 @@ public final class MCUEliminarCiudad
 
         if (log.isDebugEnabled()) {
             log.debug(">procesarEliminarCiudad");
+            System.out.println(" ");
         }
       
         FormaEliminarCiudad forma = (FormaEliminarCiudad)form;
