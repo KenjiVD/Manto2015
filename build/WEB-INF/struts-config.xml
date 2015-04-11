@@ -107,6 +107,9 @@
         <form-bean name="formaNuevoLogin"
                    type="edu.uag.iidis.scec.vista.FormaNuevoLogin">
         </form-bean>
+        <form-bean name="formaEliminarTest"
+                   type="edu.uag.iidis.scec.vista.FormaEliminarTest">
+        </form-bean>
     </form-beans>
 
 
@@ -136,7 +139,14 @@
                 </action>
             <!--   Test-->
 
-
+        <action path="/procesarEliminarTest"
+                type="edu.uag.iidis.scec.control.MCUEliminarTest"
+                parameter="procesarEliminarTest"
+                name="formaEliminarTest"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/solicitarListarTest.do" redirect="true"/>
+        </action>
 
          <action path="/solicitarListarTest"
                 type="edu.uag.iidis.scec.control.MCUListarTest"
@@ -221,7 +231,7 @@
                 validate="true"
                 input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoTest.jsp" >
             <forward name="cancelar" path="/irNuevos.do" redirect="true"/>
-            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="exito" path="/irNuevos.do"/>
             <forward name="volver" path="irNuevos.do" redirect="true"/>
        </action>
 
@@ -251,7 +261,7 @@
                 validate="true"
                 input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaSeccion.jsp" >
             <forward name="cancelar" path="/irNuevos.do" redirect="true"/>
-            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="exito" path="/irNuevos.do"/>
             <forward name="volver" path="irNuevos.do" redirect="true"/>
        </action>
 
@@ -282,7 +292,7 @@
                 validate="true"
                 input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPregunta.jsp" >
             <forward name="cancelar" path="/irNuevos.do" redirect="true"/>
-            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="exito" path="/irNuevos.do"/>
             <forward name="volver" path="irNuevos.do" redirect="true"/>
        </action>
 
@@ -296,7 +306,7 @@
                 validate="true"
                 input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaRespuesta.jsp" >
             <forward name="cancelar" path="/irNuevos.do" redirect="true"/>
-            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="exito" path="/irNuevos.do"/>
             <forward name="volver" path="irNuevos.do" redirect="true"/>
        </action>
         <!--Test-->

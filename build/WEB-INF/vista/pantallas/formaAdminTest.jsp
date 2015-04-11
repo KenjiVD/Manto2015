@@ -7,6 +7,6 @@
     <div id="menu">
             <a href="solicitarRegistroTest.do"><p>Agregar Test</p></a>
             <a href="solicitarRegistroSeccion.do"><p>Agregar Seccion</p></a>
-            <a href="solicitarRegistroPregunta.do"><p>Agergar Pregunta</p></a>
-            <a href="solicitarRegistroRespuesta.do"><p>Agergar Respuesta</p></a>
+            <a href="solicitarRegistroPregunta.do"><p>Agregar Pregunta</p></a>
+            <a href="solicitarRegistroRespuesta.do"><p>Agregar Respuesta</p></a>
         </div>
