@@ -52,6 +52,9 @@ public final class MCUListarSecciones
 
         ManejadorTest mr2 = new ManejadorTest();
         Collection resultado2 = mr2.listarTest();
+        if(resultado==null||resultado2==null||forma==null){
+        log.debug("###Nulo");}
+        else{log.debug("###OK");}
 
         forma.setTest( resultado2 );
 

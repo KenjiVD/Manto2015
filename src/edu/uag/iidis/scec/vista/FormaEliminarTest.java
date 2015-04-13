@@ -22,8 +22,8 @@ public final class FormaEliminarTest
         return (this.valor);
     }
 
-    public void setValor(Long valor) {
-         this.valor = valor;
+    public void setValor(Long id) {
+         this.valor = id;
     }
 
 

@@ -47,8 +47,14 @@
         <form-bean name="formaNuevosFormularios"
                    type="edu.uag.iidis.scec.vista.FormaNuevosFormularios">
         </form-bean>
-        <form-bean name="formaListadoSeccion"
-                   type="edu.uag.iidis.scec.vista.formaListadoSeccion">
+        <form-bean name="formaListadoSecciones"
+                   type="edu.uag.iidis.scec.vista.FormaListadoSecciones">
+        </form-bean>
+        <form-bean name="formaListadoPreguntas"
+                   type="edu.uag.iidis.scec.vista.FormaListadoPreguntas">
+        </form-bean>
+        <form-bean name="formaListadoRespuestas"
+                   type="edu.uag.iidis.scec.vista.FormaListadoRespuestas">
         </form-bean>
         <form-bean name="formaListadoSeccionesOpcion"
                    type="edu.uag.iidis.scec.vista.FormaListadoSeccionesOpcion">
@@ -110,6 +116,18 @@
         <form-bean name="formaEliminarTest"
                    type="edu.uag.iidis.scec.vista.FormaEliminarTest">
         </form-bean>
+        <form-bean name="formaEliminarSeccion"
+                   type="edu.uag.iidis.scec.vista.FormaEliminarSeccion">
+        </form-bean>
+        <form-bean name="formaEliminarPregunta"
+                   type="edu.uag.iidis.scec.vista.FormaEliminarPregunta">
+        </form-bean>
+        <form-bean name="formaEliminarRespuesta"
+                   type="edu.uag.iidis.scec.vista.FormaEliminarRespuesta">
+        </form-bean>
+        <form-bean name="formaListadoEliminar"
+                   type="edu.uag.iidis.scec.vista.FormaListadoEliminar">
+        </form-bean>
     </form-beans>
 
 
@@ -138,6 +156,45 @@
                 <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp"/>
                 </action>
             <!--   Test-->
+     <action path="/solicitarListarTest"
+                 type="edu.uag.iidis.scec.control.MCUListarTest"
+                parameter="solicitarListarTest"
+                name="formaListadoTest"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoTest.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+        <action path="/solicitarListarSecciones"
+                 type="edu.uag.iidis.scec.control.MCUListarSecciones"
+                parameter="solicitarListarSecciones"
+                name="formaListadoSecciones"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoSecciones.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+        <action path="/solicitarListarPreguntas"
+                 type="edu.uag.iidis.scec.control.MCUListarPreguntas"
+                parameter="solicitarListarPreguntas"
+                name="formaListadoPreguntas"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoPreguntas.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+        <action path="/solicitarListarRespuestas"
+                 type="edu.uag.iidis.scec.control.MCUListarRespuestas"
+                parameter="solicitarListarRespuestas"
+                name="formaListadoRespuestas"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoRespuestas.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+
+
+
 
         <action path="/procesarEliminarTest"
                 type="edu.uag.iidis.scec.control.MCUEliminarTest"
@@ -146,17 +203,36 @@
                 scope="request"
                 validate="false">
             <forward name="exito" path="/solicitarListarTest.do" redirect="true"/>
+             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
-
-         <action path="/solicitarListarTest"
-                type="edu.uag.iidis.scec.control.MCUListarTest"
-                parameter="solicitarListarTest"
-                name="formaListadoTest"
+        <action path="/procesarEliminarSeccion"
+                type="edu.uag.iidis.scec.control.MCUEliminarSeccion"
+                parameter="procesarEliminarSeccion"
+                name="formaEliminarSeccion"
                 scope="request"
                 validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoTest.jsp"/>
-            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="exito" path="/solicitarListarSecciones.do" redirect="true"/>
+             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
+        <action path="/procesarEliminarPregunta"
+                type="edu.uag.iidis.scec.control.MCUEliminarPregunta"
+                parameter="procesarEliminarPregunta"
+                name="formaEliminarPregunta"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/solicitarListarPreguntas.do" redirect="true"/>
+             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+        <action path="/procesarEliminarRespuesta"
+                type="edu.uag.iidis.scec.control.MCUEliminarRespuesta"
+                parameter="procesarEliminarRespuesta"
+                name="formaEliminarRespuesta"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/solicitarListarRespuestas.do" redirect="true"/>
+             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+
         <action path="/irMenu"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaMenuTest.jsp" />
 
@@ -261,7 +337,7 @@
                 validate="true"
                 input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaSeccion.jsp" >
             <forward name="cancelar" path="/irNuevos.do" redirect="true"/>
-            <forward name="exito" path="/irNuevos.do"/>
+            <forward name="exito" path="/irNuevosw.do"/>
             <forward name="volver" path="irNuevos.do" redirect="true"/>
        </action>
 
@@ -311,7 +387,16 @@
        </action>
         <!--Test-->
         
-        
+        <action path="/solicitarListarEliminar"
+                type="edu.uag.iidis.scec.control.MCUListarEliminar"
+                parameter="solicitarListarEliminar"
+                name="formaListadoEliminar"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoEliminar.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+
         <action path="/solicitarListarRoles"
                 type="edu.uag.iidis.scec.control.MCUListarRoles"
                 parameter="solicitarListarRoles"

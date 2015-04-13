@@ -34,7 +34,7 @@ public final class MCUListarPreguntas
             throws Exception {
 
         if (log.isDebugEnabled()) {
-            log.debug(">solicitarListarPreguntas");
+            log.debug(">solicitarListarPreguntas##");
         }
 
         // Verifica si la acción fue cancelada por el usuario
