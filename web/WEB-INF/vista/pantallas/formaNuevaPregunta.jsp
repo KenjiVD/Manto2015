@@ -18,7 +18,7 @@
         <option></option>
       </select>
       <br><br>
-      <input type="text" name="pregunta" class="pregunta" placeholder="Pregunta"><br><br>
+      <input required type="text" name="pregunta" class="pregunta" placeholder="Pregunta"><br><br>
       <input type="submit" value="Nueva Pregunta" class="envio" /><br><br>
       </form>
     </div>

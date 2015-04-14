@@ -13,7 +13,7 @@
         </c:forEach>
       </select>
       <br><br>
-      <input type="text" name="nombre" placeholder="Nombre Sección" value="${formaNuevaSeccion.nombre}"/><br><br>
+      <input required type="text" name="nombre" placeholder="Nombre Sección" value="${formaNuevaSeccion.nombre}"/><br><br>
       <input type="submit" value="Agregar Sección" class="envio" /><br><br>
       </form>
     </div>
